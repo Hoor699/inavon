@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===== META TAGS ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>INAVON GLOBAL — Empowering Business with Next-Gen RTLS Solutions</title>
+    <meta name="description" content="INAVON GLOBAL provides next-generation Real-Time Locating Systems (RTLS) using Bluetooth Angle of Arrival technology with 0.1m indoor positioning accuracy for Manufacturing, Healthcare, Logistics and Events industries.">
+    <meta name="keywords" content="RTLS, Real-Time Locating System, Indoor Positioning, Bluetooth AoA, Angle of Arrival, Asset Tracking, INAVON GLOBAL, Manufacturing RTLS, Healthcare RTLS, Logistics RTLS, IoT, Bluetooth Tags">
+    <meta name="author" content="INAVON GLOBAL">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inavonglobal.com/">
+    <meta property="og:title" content="INAVON GLOBAL — Next-Gen RTLS Solutions">
+    <meta property="og:description" content="Empowering Business with Next Generation Real-Time Locating Systems (RTLS). Indoor positioning accuracy up to 0.1m using Bluetooth AoA technology.">
+    <meta property="og:image" content="https://inavonglobal.com/og-image.jpg">
+    <meta property="og:site_name" content="INAVON GLOBAL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://inavonglobal.com/">
+    <meta name="twitter:title" content="INAVON GLOBAL — Next-Gen RTLS Solutions">
+    <meta name="twitter:description" content="Empowering Business with Next Generation Real-Time Locating Systems (RTLS). Indoor positioning accuracy up to 0.1m.">
+    <meta name="twitter:image" content="https://inavonglobal.com/og-image.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://inavonglobal.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%239333EA'/><text x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>IG</text></svg>">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-l">
+                <a href="tel:+966882583186"><i class="fas fa-phone"></i> +966 88 258 3186</a>
+                <a href="mailto:info@inavonglobal.com"><i class="fas fa-envelope"></i> info@inavonglobal.com</a>
+            </div>
+            <div class="top-r">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+   <!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="container">
+        <!-- Logo ko <a> tag se wrap kiya hai -->
+        <a href="index.html" class="logo">
+            <div class="logo-ic">IG</div>
+            <div class="logo-t">INAVON <span>GLOBAL</span></div>
+        </a>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="solution.html">Solutions</a>
+            <a href="products.html">Our Products</a>
+            <a href="shop.html">Shop</a>
+            <!-- Agar contact alag page hai toh href="contact.html" likhein -->
+            <a href="#contact" class="btn-p btn-sm nav-cta">Get a Quote</a>
+        </div>
+        
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mob-overlay" id="mobOverlay" onclick="toggleMenu()"></div>
+<div class="mob-menu" id="mobMenu">
+    <div class="mob-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+    
+    <!-- Mobile menu mein bhi same file links diye hain -->
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="solution.html" onclick="toggleMenu()">Solutions</a>
+    <a href="products.html" onclick="toggleMenu()">Our Products</a>
+    <a href="shop.html" onclick="toggleMenu()">Shop</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    
+    <div class="mob-cta">
+        <a href="#contact" class="btn-p" onclick="toggleMenu()" style="width:100%;justify-content:center;">Get a Quote</a>
+    </div>
+</div>
+
+
+<!-- OUR PRODUCTS HERO -->
+<section class="section prod-hero">
+    <div class="prod-hero-bg">
+        <img src="images/product.avif" alt="Our Products">
+        <div class="prod-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="prod-hero-content anim">
+            <div class="prod-hero-label"><i class="fas fa-microchip"></i> Our Products</div>
+            <h1>Experience <span>Real-Time Precision Tracking</span> for Smarter Operation</h1>
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCT CARDS -->
+<section class="section prod-sec">
+    <div class="container">
+        <div class="prod-grid">
+            <div class="prod-card anim " onclick="window.location.href='aoa-anchor.html'">
+                <div class="prod-card-img">
+                    <img src="images/aoa anchar.jpg" alt="AoA Anchor">
+                </div>
+                <div class="prod-card-body">
+                    <h3>AoA Anchor</h3>
+                </div>
+            </div>
+            <div class="prod-card anim" onclick="window.location.href='bluetooth-rtls-tags.html'">
+                <div class="prod-card-img">
+                    <img src="images/blutooth.jpg" alt="Bluetooth RTLS Tags">
+                </div>
+                <div class="prod-card-body">
+                    <h3>Bluetooth RTLS Tags</h3>
+                </div>
+            </div>
+            <div class="prod-card anim" onclick="window.location.href='rtls-platform.html'">
+                <div class="prod-card-img">
+                    <img src="images/platform.jpg" alt="TEFCO Real Time Locating System (RTLS) Platform">
+                </div>
+                <div class="prod-card-body">
+                    <h3>Real Time Locating System (RTLS) Platform</h3>
+                </div>
+            </div>
+            <div class="prod-card anim" onclick="window.location.href='rtls-api.html'">
+                <div class="prod-card-img">
+                    <img src="images/api.png" alt="TEFCO Indoor Location Service: RTLS API">
+                </div>
+                <div class="prod-card-body">
+                    <h3> Indoor Location Service: RTLS API</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   <!-- ===== FOOTER (Global) ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="foot-brand">
+                <div class="logo-t" style="margin-bottom:12px;">INAVON <span>GLOBAL</span></div>
+                <p>Empowering business with next-generation Real-Time Locating Systems (RTLS). Safe, reliable, and cost-effective indoor positioning solutions.</p>
+                <div class="foot-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="foot-col">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('solutions')">Solutions</a>
+                <a href="#" onclick="showPage('products')">Our Products</a>
+                <a href="#" onclick="showPage('shop')">Shop</a>
+                <a href="#" onclick="scrollToContact()">Contact Us</a>
+            </div>
+            <div class="foot-col">
+                <h4>Solutions</h4>
+                <a href="#" onclick="showPage('solutions')">Manufacturing</a>
+                <a href="#" onclick="showPage('solutions')">Healthcare</a>
+                <a href="#" onclick="showPage('solutions')">Logistics</a>
+                <a href="#" onclick="showPage('solutions')">Events</a>
+            </div>
+            <div class="foot-col foot-contact">
+                <h4>Get in Touch</h4>
+                <div class="fc-item"><i class="fas fa-phone"></i><span>+966 55 304 4161</span></div>
+                <div class="fc-item"><i class="fas fa-envelope"></i><span>info@inavonglobal.com</span></div>
+                <div class="fc-item"><i class="fas fa-map-marker-alt"></i><span>2537 Street Number 78, 8891, Al Olaya Dist, Riyadh 12214</span></div>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <div class="container">
+                &copy; 2024 INAVON GLOBAL. All rights reserved. | Privacy Policy | Terms of Service
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+        // ===== PAGE NAVIGATION =====
+        function showPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Show selected page
+            document.getElementById('page-' + page).classList.add('active');
+            // Update nav active state
+            document.querySelectorAll('.nav-links a[data-page], .mob-menu a[data-page]').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('data-page') === page) a.classList.add('active');
+            });
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Re-trigger animations
+            setTimeout(initAnimations, 100);
+        }
+
+        // ===== SCROLL TO CONTACT =====
+        function scrollToContact() {
+            showPage('home');
+            setTimeout(() => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }, 200);
+        }
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            const menu = document.getElementById('mobMenu');
+            const overlay = document.getElementById('mobOverlay');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.toggle('open');
+            overlay.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        // ===== FORM SUBMIT =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('formMsg');
+            msg.style.display = 'block';
+            e.target.reset();
+            setTimeout(() => { msg.style.display = 'none'; }, 5000);
+        }
+
+        // ===== SHOP FILTER =====
+        function filterShop(cat, btn) {
+            // Update active button
+            document.querySelectorAll('.shop-filter').forEach(f => f.classList.remove('active'));
+            btn.classList.add('active');
+            // Filter cards
+            document.querySelectorAll('.shop-card').forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ===== SCROLL TO TOP BUTTON =====
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTop');
+            if (window.scrollY > 500) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.anim').forEach(el => {
+                el.classList.remove('visible');
+                observer.observe(el);
+            });
+        }
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.scrollY;
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.04)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // ===== INIT =====
+        document.addEventListener('DOMContentLoaded', () => {
+            initAnimations();
+        });
+    </script>
+</body>
+</html>

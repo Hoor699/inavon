@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INAVON GLOBAL Shop — Advanced Dashcams, MDVR & Fleet Intelligence Solutions</title>
+    <meta name="description" content="Shop premium dashcams, MDVR systems, GPS trackers, EV chargers, RFID readers and fleet management accessories at INAVON GLOBAL. Free shipping on all orders.">
+    <meta name="keywords" content="dashcam, MDVR, GPS tracker, EV charger, RFID, fleet management, vehicle monitoring, INAVON GLOBAL, car camera, dash camera">
+    <meta name="author" content="INAVON GLOBAL">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://shop.inavonglobal.com/">
+    <meta property="og:title" content="INAVON GLOBAL Shop — Advanced Dashcams, MDVR & Fleet Intelligence Solutions">
+    <meta property="og:description" content="Shop premium dashcams, MDVR systems, GPS trackers, EV chargers and fleet management accessories.">
+    <meta property="og:image" content="https://shop.inavonglobal.com/images/og-banner.jpg">
+    <meta property="og:site_name" content="INAVON GLOBAL Shop">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://shop.inavonglobal.com/">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #ffffff; color: #0f172a; overflow-x: hidden; }
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+        /* ── Scrolling Headlines Top Bar ── */
+        .top-bar { background: #0f172a; overflow: hidden; position: relative; height: 36px; }
+        .top-bar .container { display: flex; align-items: center; height: 100%; position: relative; }
+        .top-left-contact { display: flex; align-items: center; gap: 16px; z-index: 2; flex-shrink: 0; padding-right: 20px; background: #0f172a; }
+        .top-left-contact span { color: #94a3b8; font-size: 11px; display: flex; align-items: center; gap: 5px; white-space: nowrap; }
+        .top-left-contact span i { color: #3b82f6; font-size: 10px; }
+        .top-right-social { display: flex; align-items: center; gap: 12px; z-index: 2; flex-shrink: 0; padding-left: 20px; background: #0f172a; }
+        .top-right-social a { color: #94a3b8; font-size: 12px; transition: color 0.3s; }
+        .top-right-social a:hover { color: #3b82f6; }
+        .top-marquee { flex: 1; overflow: hidden; position: relative; }
+        .top-marquee::before, .top-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 40px; z-index: 1; }
+        .top-marquee::before { left: 0; background: linear-gradient(90deg, #0f172a, transparent); }
+        .top-marquee::after { right: 0; background: linear-gradient(-90deg, #0f172a, transparent); }
+        .marquee-track { display: flex; animation: marquee 30s linear infinite; white-space: nowrap; }
+        .marquee-track span { color: #cbd5e1; font-size: 12px; font-weight: 500; padding: 0 40px; }
+        .marquee-track span i { color: #3b82f6; margin-right: 6px; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* ── Header ── */
+        .shop-header { background: #ffffff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 999; }
+        .header-main { display: flex; align-items: center; justify-content: space-between; padding: 12px 0; gap: 20px; }
+
+        /* ── LEFT: Hamburger + Logo ── */
+        .header-left { display: flex; align-items: center; gap: 14px; flex-shrink: 0; }
+        .shop-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; flex-shrink: 0; }
+        .logo-mark { width: 44px; height: 44px; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 900; }
+        .logo-name { font-size: 20px; font-weight: 900; color: #0f172a; letter-spacing: -0.02em; }
+        .logo-name span { background: linear-gradient(135deg, #3b82f6, #1d4ed8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* ── CENTER: Search ── */
+        .header-search { flex: 1; max-width: 550px; display: flex; align-items: center; border: 2px solid #e5e7eb; border-radius: 12px; overflow: hidden; transition: border-color 0.3s; }
+        .header-search:focus-within { border-color: #3b82f6; }
+        .header-search input { flex: 1; padding: 10px 16px; border: none; outline: none; font-size: 14px; font-family: 'Inter', sans-serif; color: #0f172a; background: transparent; }
+        .header-search input::placeholder { color: #9ca3af; }
+        .search-btn { padding: 10px 18px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #fff; border: none; cursor: pointer; font-size: 14px; transition: opacity 0.3s; }
+        .search-btn:hover { opacity: 0.9; }
+
+        /* ── RIGHT: Actions ── */
+        .header-actions { display: flex; align-items: center; gap: 18px; flex-shrink: 0; }
+        .header-act { display: flex; flex-direction: column; align-items: center; gap: 2px; text-decoration: none; color: #4b5563; font-size: 10px; font-weight: 500; transition: color 0.3s; position: relative; }
+        .header-act i { font-size: 18px; }
+        .header-act:hover { color: #1d4ed8; }
+        .cart-count { position: absolute; top: -6px; right: -8px; background: #ef4444; color: #fff; font-size: 9px; font-weight: 700; width: 16px; height: 16px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: transform 0.3s; }
+
+        /* ── Hamburger ── */
+        .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+        .hamburger span { width: 22px; height: 2px; background: #0f172a; border-radius: 2px; transition: all 0.3s; }
+        .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .hamburger.active span:nth-child(2) { opacity: 0; }
+        .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+        /* ── Mobile Menu ── */
+        .mob-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 998; opacity: 0; visibility: hidden; transition: all 0.3s; }
+        .mob-overlay.active { opacity: 1; visibility: visible; }
+        .mob-menu { position: fixed; top: 0; left: -320px; width: 320px; height: 100vh; background: #ffffff; z-index: 999; transition: left 0.4s ease; overflow-y: auto; padding: 24px; box-shadow: 10px 0 40px rgba(0,0,0,0.1); }
+        .mob-menu.active { left: 0; }
+        .mob-close { display: flex; align-items: center; justify-content: flex-end; margin-bottom: 24px; }
+        .mob-close button { background: none; border: none; font-size: 24px; color: #0f172a; cursor: pointer; }
+
+        /* Mobile Menu User Section */
+        .mob-user-section { background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(29,78,216,0.04)); border-radius: 16px; padding: 20px; margin-bottom: 20px; border: 1px solid rgba(59,130,246,0.12); }
+        .mob-user-avatar { width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, #3b82f6, #1d4ed8); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 20px; margin-bottom: 12px; }
+        .mob-user-section h4 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 4px; }
+        .mob-user-section p { font-size: 12px; color: #6b7280; margin-bottom: 14px; }
+        .mob-user-actions { display: flex; gap: 10px; }
+        .mob-user-actions a { flex: 1; text-align: center; padding: 10px 0; border-radius: 10px; font-size: 12px; font-weight: 600; text-decoration: none; transition: all 0.3s; }
+        .mob-user-actions .mob-signin-btn { background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #fff; }
+        .mob-user-actions .mob-signin-btn:hover { opacity: 0.9; }
+        .mob-user-actions .mob-register-btn { background: transparent; color: #1d4ed8; border: 1.5px solid #3b82f6; }
+        .mob-user-actions .mob-register-btn:hover { background: rgba(59,130,246,0.06); }
+
+        /* Mobile Menu Quick Actions */
+        .mob-quick-actions { display: flex; gap: 8px; margin-bottom: 20px; }
+        .mob-quick-actions a { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 6px; padding: 14px 8px; background: #f9fafb; border-radius: 12px; text-decoration: none; color: #0f172a; border: 1px solid #e5e7eb; transition: all 0.3s; }
+        .mob-quick-actions a:hover { border-color: rgba(59,130,246,0.3); background: rgba(59,130,246,0.04); }
+        .mob-quick-actions a i { font-size: 18px; color: #1d4ed8; }
+        .mob-quick-actions a span { font-size: 11px; font-weight: 600; }
+
+        .mob-menu .mob-nav-links a { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid #f3f4f6; font-size: 15px; font-weight: 600; color: #0f172a; text-decoration: none; transition: color 0.3s; }
+        .mob-menu .mob-nav-links a:hover { color: #1d4ed8; }
+        .mob-menu .mob-nav-links a i { width: 20px; text-align: center; color: #3b82f6; font-size: 14px; }
+
+        .mob-menu .mob-search { margin-top: 20px; }
+        .mob-menu .mob-search input { width: 100%; padding: 12px 16px; border: 2px solid #e5e7eb; border-radius: 12px; font-size: 14px; outline: none; font-family: 'Inter', sans-serif; }
+        .mob-menu .mob-search input:focus { border-color: #3b82f6; }
+
+        /* ── Search Overlay ── */
+        .search-overlay { position: fixed; inset: 0; background: rgba(2,6,23,0.92); backdrop-filter: blur(20px); z-index: 10000; display: flex; align-items: flex-start; justify-content: center; padding-top: 15vh; opacity: 0; visibility: hidden; transition: all 0.4s; }
+        .search-overlay.active { opacity: 1; visibility: visible; }
+        .search-overlay-inner { width: 100%; max-width: 700px; padding: 0 24px; }
+        .search-overlay-close { display: flex; justify-content: flex-end; margin-bottom: 24px; }
+        .search-overlay-close button { background: none; border: none; color: #fff; font-size: 28px; cursor: pointer; transition: transform 0.3s; }
+        .search-overlay-close button:hover { transform: rotate(90deg); }
+        .search-overlay-input { display: flex; border-bottom: 3px solid rgba(59,130,246,0.5); padding-bottom: 12px; }
+        .search-overlay-input input { flex: 1; background: transparent; border: none; outline: none; font-size: 32px; font-weight: 300; color: #ffffff; font-family: 'Inter', sans-serif; }
+        .search-overlay-input input::placeholder { color: #6b7280; }
+        .search-overlay-input button { background: none; border: none; color: #3b82f6; font-size: 28px; cursor: pointer; }
+        .search-overlay-tags { margin-top: 32px; }
+        .search-overlay-tags p { font-size: 13px; color: #6b7280; margin-bottom: 12px; }
+        .search-overlay-tags .tags-wrap { display: flex; flex-wrap: wrap; gap: 8px; }
+        .search-overlay-tags .tag { padding: 8px 16px; border-radius: 100px; border: 1px solid rgba(59,130,246,0.3); color: #60a5fa; font-size: 13px; text-decoration: none; transition: all 0.3s; cursor: pointer; }
+        .search-overlay-tags .tag:hover { background: rgba(59,130,246,0.15); border-color: #3b82f6; }
+
+        /* ── Category Nav ── */
+        .cat-nav { background: #0f172a; }
+        .cat-nav .container { display: flex; align-items: center; overflow-x: auto; scrollbar-width: none; }
+        .cat-nav .container::-webkit-scrollbar { display: none; }
+        .cat-link { display: flex; align-items: center; gap: 8px; padding: 13px 20px; color: #94a3b8; text-decoration: none; font-size: 12px; font-weight: 600; white-space: nowrap; transition: all 0.3s; border-bottom: 2px solid transparent; }
+        .cat-link i { font-size: 13px; color: #3b82f6; }
+        .cat-link:hover, .cat-link.active { color: #ffffff; background: rgba(59,130,246,0.1); border-bottom-color: #3b82f6; }
+
+        /* ── Hero Carousel ── */
+        .hero-carousel { position: relative; width: 100%; min-height: 70vh; overflow: hidden; }
+        .hero-slides { display: flex; transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .hero-slide { min-width: 100%; position: relative; min-height: 70vh; display: flex; align-items: center; }
+        .hero-slide-bg { position: absolute; inset: 0; }
+        .hero-slide-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .hero-slide-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(2,6,23,0.88) 0%, rgba(15,23,42,0.6) 50%, rgba(2,6,23,0.82) 100%); }
+        .hero-slide-content { position: relative; z-index: 2; padding: 80px 0; max-width: 700px; }
+        .hero-slide-content h1 { font-family: 'Playfair Display', serif; font-size: 60px; font-weight: 800; line-height: 1.05; color: #ffffff; margin-bottom: 20px; }
+        .hero-slide-content h1 span { background: linear-gradient(135deg, #60a5fa, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .hero-slide-sub { font-family: 'Libre Baskerville', serif; font-size: 17px; color: #cbd5e1; line-height: 1.6; margin-bottom: 36px; }
+        .hero-dots { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; z-index: 5; }
+        .hero-dot { width: 12px; height: 12px; border-radius: 50%; border: 2px solid rgba(255,255,255,0.4); background: transparent; cursor: pointer; transition: all 0.3s; }
+        .hero-dot.active { background: #3b82f6; border-color: #3b82f6; box-shadow: 0 0 12px rgba(59,130,246,0.5); }
+        .hero-arrows { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; padding: 0 20px; z-index: 5; pointer-events: none; }
+        .hero-arrow { width: 48px; height: 48px; border-radius: 50%; background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2); color: #fff; font-size: 18px; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s; pointer-events: all; }
+        .hero-arrow:hover { background: rgba(59,130,246,0.4); border-color: #3b82f6; }
+
+        /* ── Shop Now Button ── */
+        .shop-now-btn { display: inline-flex; align-items: center; gap: 10px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #ffffff; font-size: 15px; font-weight: 700; padding: 15px 36px; border-radius: 14px; text-decoration: none; transition: all 0.3s; box-shadow: 0 0 40px rgba(59,130,246,0.35); position: relative; overflow: hidden; }
+        .shop-now-btn::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent); transition: left 0.6s; }
+        .shop-now-btn:hover::before { left: 100%; }
+        .shop-now-btn:hover { transform: translateY(-3px); box-shadow: 0 0 60px rgba(59,130,246,0.5); color: #fff; }
+        .shop-now-btn i { font-size: 13px; transition: transform 0.3s; }
+        .shop-now-btn:hover i { transform: translateX(5px); }
+
+        /* ── Collection ── */
+        .collection-sec { padding: 80px 0; background: #ffffff; }
+        .sec-header-center { text-align: center; margin-bottom: 48px; }
+        .sec-sparkle { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 700; color: #1d4ed8; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 12px; }
+        .sec-header-center h2 { font-size: 32px; font-weight: 800; color: #0f172a; }
+        .collection-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; }
+        .collection-card { text-align: center; cursor: pointer; transition: all 0.4s; }
+        .collection-card:hover { transform: translateY(-6px); }
+        .collection-circle { width: 180px; height: 180px; border-radius: 50%; overflow: hidden; margin: 0 auto 16px; border: 3px solid rgba(59,130,246,0.15); transition: all 0.4s; box-shadow: 0 10px 40px rgba(59,130,246,0.08); }
+        .collection-card:hover .collection-circle { border-color: rgba(59,130,246,0.4); box-shadow: 0 15px 60px rgba(59,130,246,0.15); }
+        .collection-circle img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .collection-card:hover .collection-circle img { transform: scale(1.08); }
+        .collection-card h3 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+        .collection-card a { font-size: 13px; font-weight: 600; color: #1d4ed8; text-decoration: none; transition: color 0.3s; }
+        .collection-card a:hover { color: #3b82f6; }
+
+        /* ── Glassmorphism Banner ── */
+        .glass-sec { position: relative; padding: 120px 0; overflow: hidden; }
+        .glass-bg { position: absolute; inset: 0; }
+        .glass-bg img { width: 100%; height: 100%; object-fit: cover; }
+        .glass-overlay { position: absolute; inset: 0; background: rgba(2,6,23,0.6); backdrop-filter: blur(2px); }
+        .glass-content { position: relative; z-index: 2; text-align: center; max-width: 700px; margin: 0 auto; }
+        .glass-card { background: rgba(255,255,255,0.08); backdrop-filter: blur(24px); border-radius: 28px; border: 1px solid rgba(255,255,255,0.15); padding: 56px 48px; box-shadow: 0 32px 64px rgba(0,0,0,0.3); }
+        .glass-card h2 { font-family: 'Playfair Display', serif; font-size: 42px; font-weight: 800; color: #ffffff; margin-bottom: 16px; line-height: 1.1; }
+        .glass-card h2 span { background: linear-gradient(135deg, #60a5fa, #3b82f6); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .glass-card p { font-family: 'Libre Baskerville', serif; font-size: 16px; color: #cbd5e1; line-height: 1.7; margin-bottom: 32px; }
+        .glass-card .shop-now-btn { font-size: 14px; padding: 14px 32px; }
+
+        /* ── Products ── */
+        .products-sec { padding: 80px 0; background: #f9fafb; }
+        .sec-header-center-row { text-align: center; margin-bottom: 32px; }
+        .sec-header-center-row h2 { font-size: 28px; font-weight: 800; color: #0f172a; margin-bottom: 8px; }
+        .view-all-center { font-size: 14px; font-weight: 600; color: #1d4ed8; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; transition: color 0.3s; }
+        .view-all-center:hover { color: #3b82f6; }
+        .products-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+        .product-card { background: #ffffff; border-radius: 16px; overflow: hidden; border: 1px solid #e5e7eb; transition: all 0.4s; position: relative; }
+        .product-card:hover { transform: translateY(-4px); box-shadow: 0 15px 50px rgba(0,0,0,0.08); border-color: rgba(59,130,246,0.2); }
+        .pc-badge { position: absolute; top: 12px; left: 12px; z-index: 2; font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 100px; text-transform: uppercase; }
+        .pc-badge.sale { background: #ef4444; color: #ffffff; }
+        .pc-badge.sold { left: auto; right: 12px; background: #6b7280; color: #ffffff; }
+        .pc-img { width: 100%; aspect-ratio: 1; overflow: hidden; background: #f3f4f6; }
+        .pc-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; }
+        .product-card:hover .pc-img img { transform: scale(1.06); }
+        .pc-body { padding: 16px; }
+        .pc-body h4 { font-size: 13px; font-weight: 600; color: #0f172a; line-height: 1.4; margin-bottom: 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .pc-price { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; }
+        .pc-old { font-size: 13px; color: #9ca3af; text-decoration: line-through; }
+        .pc-new { font-size: 16px; font-weight: 700; color: #1d4ed8; }
+        .pc-btn { display: block; width: 100%; text-align: center; padding: 10px; border-radius: 10px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #ffffff; font-size: 13px; font-weight: 600; text-decoration: none; transition: all 0.3s; border: none; cursor: pointer; }
+        .pc-btn:hover { box-shadow: 0 0 25px rgba(59,130,246,0.3); color: #fff; }
+        .pc-btn.disabled { background: #9ca3af; cursor: not-allowed; pointer-events: none; }
+
+        /* ── Why Us ── */
+        .why-sec { padding: 80px 0; background: #ffffff; }
+        .why-sec h2 { font-size: 32px; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 48px; }
+        .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+        .why-card { text-align: center; padding: 32px 24px; border-radius: 20px; background: rgba(59,130,246,0.03); border: 1px solid rgba(59,130,246,0.1); transition: all 0.3s; }
+        .why-card:hover { background: rgba(59,130,246,0.06); border-color: rgba(59,130,246,0.2); transform: translateY(-4px); }
+        .why-icon { width: 56px; height: 56px; border-radius: 16px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); display: flex; align-items: center; justify-content: center; color: #fff; font-size: 22px; margin: 0 auto 16px; }
+        .why-card h4 { font-size: 16px; font-weight: 700; color: #0f172a; margin-bottom: 6px; }
+        .why-card p { font-size: 14px; color: #6b7280; }
+
+        /* ── FAQ ── */
+        .faq-sec { padding: 80px 0; background: #f9fafb; }
+        .faq-sec h2 { font-size: 32px; font-weight: 800; color: #0f172a; text-align: center; margin-bottom: 40px; }
+        .faq-list { max-width: 700px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+        .faq-item { background: #ffffff; border: 1px solid #e5e7eb; border-radius: 14px; overflow: hidden; transition: all 0.3s; cursor: pointer; }
+        .faq-item:hover { border-color: rgba(59,130,246,0.25); }
+        .faq-q { display: flex; align-items: center; justify-content: space-between; padding: 18px 20px; font-size: 15px; font-weight: 600; color: #0f172a; }
+        .faq-q i { font-size: 12px; color: #1d4ed8; transition: transform 0.3s; }
+        .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.4s; }
+        .faq-a p { padding: 0 20px 18px; font-size: 14px; color: #6b7280; line-height: 1.6; }
+        .faq-item.open .faq-a { max-height: 200px; }
+        .faq-item.open .faq-q i { transform: rotate(180deg); }
+        .faq-item.open { border-color: rgba(59,130,246,0.3); }
+
+        /* ── Newsletter ── */
+        .newsletter-sec { padding: 80px 0; background: linear-gradient(135deg, #0f172a, #020617); text-align: center; }
+        .newsletter-sec h2 { font-size: 32px; font-weight: 800; color: #ffffff; margin-bottom: 12px; }
+        .newsletter-sec > .container > p { font-size: 16px; color: #94a3b8; margin-bottom: 32px; }
+        .newsletter-form { display: flex; gap: 12px; max-width: 500px; margin: 0 auto; }
+        .newsletter-form input { flex: 1; padding: 14px 20px; border-radius: 12px; border: 1px solid rgba(59,130,246,0.3); background: rgba(255,255,255,0.05); color: #ffffff; font-size: 14px; outline: none; transition: border-color 0.3s; }
+        .newsletter-form input:focus { border-color: #3b82f6; }
+        .newsletter-form input::placeholder { color: #9ca3af; }
+        .newsletter-form button { padding: 14px 28px; border-radius: 12px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); color: #ffffff; font-size: 14px; font-weight: 600; border: none; cursor: pointer; transition: all 0.3s; white-space: nowrap; }
+        .newsletter-form button:hover { transform: translateY(-2px); box-shadow: 0 0 30px rgba(59,130,246,0.4); }
+
+        /* ── Footer ── */
+        .shop-footer { background: #0f172a; padding: 64px 0 0; color: #94a3b8; }
+        .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+        .footer-brand .shop-logo { margin-bottom: 16px; }
+        .footer-brand .logo-name { color: #ffffff; }
+        .footer-brand p { font-size: 14px; line-height: 1.6; color: #64748b; margin-bottom: 20px; }
+        .footer-social { display: flex; gap: 10px; }
+        .footer-social a { width: 38px; height: 38px; border-radius: 10px; background: rgba(59,130,246,0.1); border: 1px solid rgba(59,130,246,0.15); display: flex; align-items: center; justify-content: center; color: #60a5fa; font-size: 14px; text-decoration: none; transition: all 0.3s; }
+        .footer-social a:hover { background: rgba(59,130,246,0.2); border-color: rgba(59,130,246,0.4); color: #bfdbfe; transform: translateY(-2px); }
+        .footer-col h4 { font-size: 15px; font-weight: 700; color: #ffffff; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.05em; }
+        .footer-col a { display: block; font-size: 14px; color: #64748b; text-decoration: none; padding: 5px 0; transition: color 0.3s; }
+        .footer-col a:hover { color: #60a5fa; }
+        .footer-col .footer-contact-item { display: flex; align-items: flex-start; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #64748b; }
+        .footer-col .footer-contact-item i { color: #3b82f6; margin-top: 3px; flex-shrink: 0; }
+        .footer-bottom { border-top: 1px solid rgba(59,130,246,0.1); padding: 24px 0; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+        .footer-bottom p { font-size: 13px; color: #475569; }
+        .footer-payments { display: flex; align-items: center; gap: 12px; }
+        .footer-payments i { font-size: 28px; color: #475569; transition: color 0.3s; }
+        .footer-payments i:hover { color: #60a5fa; }
+
+        /* ── Responsive ── */
+        @media (max-width: 1024px) {
+            .collection-grid, .products-grid { grid-template-columns: repeat(2, 1fr); }
+            .hero-slide-content h1 { font-size: 44px; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); gap: 32px; }
+        }
+        @media (max-width: 768px) {
+            .top-bar { display: none; }
+            .header-search { display: none; }
+            .hamburger { display: flex; }
+            .header-act.mob-hide { display: none; }
+            .hero-slide { min-height: 50vh; }
+            .hero-carousel { min-height: 50vh; }
+            .hero-slide-content h1 { font-size: 34px; }
+            .hero-slide-sub { font-size: 14px; }
+            .collection-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+            .collection-circle { width: 130px; height: 130px; }
+            .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+            .why-grid { grid-template-columns: 1fr; }
+            .newsletter-form { flex-direction: column; }
+            .cat-link { padding: 10px 14px; font-size: 11px; }
+            .glass-card { padding: 36px 24px; }
+            .glass-card h2 { font-size: 30px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+        }
+        @media (max-width: 480px) {
+            .hero-slide-content h1 { font-size: 26px; }
+            .collection-grid, .products-grid { grid-template-columns: 1fr; }
+            .collection-circle { width: 120px; height: 120px; }
+            .glass-card h2 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- SCROLLING HEADLINES TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-left-contact">
+            <span><i class="fas fa-phone-alt"></i> +966 50 000 0000</span>
+            <span><i class="fas fa-envelope"></i> info@inavonglobal.com</span>
+        </div>
+        <div class="top-marquee">
+            <div class="marquee-track">
+                <span><i class="fas fa-truck"></i> Free Shipping on All Orders</span>
+                <span><i class="fas fa-tag"></i> Up to 40% Off — New Arrivals</span>
+                <span><i class="fas fa-shield-alt"></i> Secure Payments & 30-Day Returns</span>
+                <span><i class="fas fa-headset"></i> 24/7 Customer Support</span>
+                <span><i class="fas fa-truck"></i> Free Shipping on All Orders</span>
+                <span><i class="fas fa-tag"></i> Up to 40% Off — New Arrivals</span>
+                <span><i class="fas fa-shield-alt"></i> Secure Payments & 30-Day Returns</span>
+                <span><i class="fas fa-headset"></i> 24/7 Customer Support</span>
+            </div>
+        </div>
+        <div class="top-right-social">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="shop-header">
+    <div class="container">
+        <div class="header-main">
+
+            <!-- LEFT: Hamburger + Logo -->
+            <div class="header-left">
+                <button class="hamburger" id="hamburgerBtn" onclick="toggleMobMenu()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="index.html" class="shop-logo" aria-label="INAVON GLOBAL Home">
+                    <div class="logo-mark">IG</div>
+                    <div class="logo-name">INAVON <span>GLOBAL</span></div>
+                </a>
+            </div>
+
+            <!-- CENTER: Search -->
+            <div class="header-search">
+                <input type="text" placeholder="Search entire store here..." id="searchInput" aria-label="Search products" onfocus="openSearchOverlay()">
+                <button class="search-btn" aria-label="Search" onclick="openSearchOverlay()"><i class="fas fa-search"></i></button>
+            </div>
+
+            <!-- RIGHT: Actions -->
+            <div class="header-actions">
+                <a href="#" class="header-act mob-hide" title="Wish List"><i class="far fa-heart"></i><span>Wishlist</span></a>
+                <a href="#" class="header-act" title="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCountBadge">0</span>
+                    <span>Cart</span>
+                </a>
+                <a href="#" class="header-act mob-hide" title="Sign In"><i class="far fa-user"></i><span>Sign In</span></a>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<!-- MOBILE MENU (Opens from LEFT) -->
+<div class="mob-overlay" id="mobOverlay" onclick="toggleMobMenu()"></div>
+<div class="mob-menu" id="mobMenu">
+    <div class="mob-close"><button onclick="toggleMobMenu()" aria-label="Close menu"><i class="fas fa-times"></i></button></div>
+
+    <!-- User Section inside Menu -->
+    <div class="mob-user-section">
+        <div class="mob-user-avatar"><i class="far fa-user"></i></div>
+        <h4>Welcome!</h4>
+        <p>Sign in for the best experience</p>
+        <div class="mob-user-actions">
+            <a href="#" class="mob-signin-btn">Sign In</a>
+            <a href="#" class="mob-register-btn">Register</a>
+        </div>
+    </div>
+
+    <!-- Quick Actions inside Menu -->
+    <div class="mob-quick-actions">
+        <a href="#" title="Wishlist"><i class="far fa-heart"></i><span>Wishlist</span></a>
+        <a href="#" title="Cart"><i class="fas fa-shopping-cart"></i><span>Cart</span></a>
+        <a href="#" title="Track Order"><i class="fas fa-truck"></i><span>Track</span></a>
+        <a href="#" title="Support"><i class="fas fa-headset"></i><span>Support</span></a>
+    </div>
+
+    <!-- Navigation Links -->
+    <div class="mob-nav-links">
+        <a href="index.html"><i class="fas fa-home"></i> Home</a>
+        <a href="solution.html"><i class="fas fa-lightbulb"></i> Solutions</a>
+        <a href="products.html"><i class="fas fa-box"></i> Our Products</a>
+        <a href="shop.html"><i class="fas fa-store"></i> Shop</a>
+        <a href="#"><i class="fas fa-video"></i> Dashcams & MDVR</a>
+        <a href="#"><i class="fas fa-map-marker-alt"></i> GPS Trackers</a>
+        <a href="#"><i class="fas fa-bolt"></i> EV Chargers</a>
+        <a href="#"><i class="fas fa-plug"></i> Accessories</a>
+        <a href="#"><i class="fas fa-info-circle"></i> About Us</a>
+        <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+    </div>
+
+    <!-- Search inside Menu -->
+    <div class="mob-search">
+        <input type="text" placeholder="Search products..." aria-label="Search" onfocus="openSearchOverlay(); toggleMobMenu();">
+    </div>
+</div>
+
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay-inner">
+        <div class="search-overlay-close">
+            <button onclick="closeSearchOverlay()" aria-label="Close search"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="search-overlay-input">
+            <input type="text" placeholder="Search for products..." id="overlaySearchInput" aria-label="Search products">
+            <button aria-label="Search"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="search-overlay-tags">
+            <p>Popular Searches:</p>
+            <div class="tags-wrap">
+                <a class="tag" href="#">Dashcam</a>
+                <a class="tag" href="#">MDVR 4CH</a>
+                <a class="tag" href="#">GPS Tracker</a>
+                <a class="tag" href="#">EV Charger</a>
+                <a class="tag" href="#">AZDOME</a>
+                <a class="tag" href="#">JIMI</a>
+                <a class="tag" href="#">Hardwire Kit</a>
+                <a class="tag" href="#">Night Vision</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CATEGORY NAV -->
+<nav class="cat-nav" aria-label="Product Categories">
+    <div class="container">
+        <a href="#" class="cat-link active"><i class="fas fa-video"></i> DASHCAM & MDVR</a>
+        <a href="#" class="cat-link"><i class="fas fa-microchip"></i> SENSORS</a>
+        <a href="#" class="cat-link"><i class="fas fa-map-marker-alt"></i> GPS TRACKER</a>
+        <a href="#" class="cat-link"><i class="fas fa-plug"></i> ACCESSORIES</a>
+        <a href="#" class="cat-link"><i class="fas fa-wifi"></i> RFID & UHF</a>
+        <a href="#" class="cat-link"><i class="fas fa-network-wired"></i> ROUTERS</a>
+        <a href="#" class="cat-link"><i class="fas fa-bolt"></i> EV CHARGER</a>
+        <a href="#" class="cat-link"><i class="fas fa-tag"></i> RFID TAGS</a>
+        <a href="#" class="cat-link"><i class="fas fa-building"></i> BRANDS</a>
+    </div>
+</nav>
+
+<!-- HERO CAROUSEL -->
+<section class="hero-carousel" aria-label="Shop Banner">
+    <div class="hero-slides" id="heroSlides">
+        <div class="hero-slide">
+            <div class="hero-slide-bg"><img src="https://picsum.photos/seed/dashcam-car-road/3780/1890.jpg" alt="Drive With Confidence"><div class="hero-slide-overlay"></div></div>
+            <div class="container"><div class="hero-slide-content">
+                <h1>Drive With <span>Confidence</span></h1>
+                <p class="hero-slide-sub">Advanced Dashcams & Accessories — Engineered for smarter, safer roads and complete fleet visibility.</p>
+                <a href="#new-arrivals" class="shop-now-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
+            </div></div>
+        </div>
+        <div class="hero-slide">
+            <div class="hero-slide-bg"><img src="https://picsum.photos/seed/fleet-mdvr-surveillance/3780/1890.jpg" alt="Fleet Intelligence"><div class="hero-slide-overlay"></div></div>
+            <div class="container"><div class="hero-slide-content">
+                <h1>Fleet <span>Intelligence</span></h1>
+                <p class="hero-slide-sub">AI-powered MDVR systems with ADAS & DMS — Real-time monitoring for your entire fleet operations.</p>
+                <a href="#new-arrivals" class="shop-now-btn">Explore Now <i class="fas fa-arrow-right"></i></a>
+            </div></div>
+        </div>
+        <div class="hero-slide">
+            <div class="hero-slide-bg"><img src="https://picsum.photos/seed/ev-charging-station/3780/1890.jpg" alt="EV Solutions"><div class="hero-slide-overlay"></div></div>
+            <div class="container"><div class="hero-slide-content">
+                <h1>Power the <span>Future</span></h1>
+                <p class="hero-slide-sub">Smart EV charging solutions for homes and businesses — Fast, reliable, and sustainable energy.</p>
+                <a href="#new-arrivals" class="shop-now-btn">Shop Now <i class="fas fa-arrow-right"></i></a>
+            </div></div>
+        </div>
+    </div>
+    <div class="hero-arrows">
+        <div class="hero-arrow" onclick="changeSlide(-1)"><i class="fas fa-chevron-left"></i></div>
+        <div class="hero-arrow" onclick="changeSlide(1)"><i class="fas fa-chevron-right"></i></div>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+</section>
+
+<!-- SHOP BY COLLECTION -->
+<section class="collection-sec" aria-label="Shop By Collection">
+    <div class="container">
+        <div class="sec-header-center">
+            <div class="sec-sparkle">✨ Shop By Collection</div>
+            <h2>Shop By Collection</h2>
+        </div>
+        <div class="collection-grid">
+            <div class="collection-card"><div class="collection-circle"><img src="https://picsum.photos/seed/data-logger-device/400/400.jpg" alt="Data Loggers"></div><h3>Data Loggers</h3><a href="#">Shop Now <i class="fas fa-arrow-right"></i></a></div>
+            <div class="collection-card"><div class="collection-circle"><img src="https://picsum.photos/seed/mdvr-recorder/400/400.jpg" alt="MDVR"></div><h3>MDVR</h3><a href="#">Shop Now <i class="fas fa-arrow-right"></i></a></div>
+            <div class="collection-card"><div class="collection-circle"><img src="https://picsum.photos/seed/dashcam-camera/400/400.jpg" alt="Dashcam"></div><h3>Dashcam</h3><a href="#">Shop Now <i class="fas fa-arrow-right"></i></a></div>
+            <div class="collection-card"><div class="collection-circle"><img src="https://picsum.photos/seed/ev-charger-station/400/400.jpg" alt="EV Charger"></div><h3>EV Charger</h3><a href="#">Shop Now <i class="fas fa-arrow-right"></i></a></div>
+        </div>
+    </div>
+</section>
+
+<!-- GLASSMORPHISM BANNER -->
+<section class="glass-sec" aria-label="Featured Banner">
+    <div class="glass-bg"><img src="https://picsum.photos/seed/technology-future-dark/1920/900.jpg" alt="Technology Background"></div>
+    <div class="glass-overlay"></div>
+    <div class="container">
+        <div class="glass-content">
+            <div class="glass-card">
+                <h2>Your Trusted Partner for <span>Smart Mobility</span></h2>
+                <p>From AI dashcams to fleet management — one platform for all your vehicle intelligence needs.</p>
+                <a href="#" class="shop-now-btn">Discover More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NEW ARRIVALS -->
+<section class="products-sec" id="new-arrivals" aria-label="New Arrivals">
+    <div class="container">
+        <div class="sec-header-center-row">
+            <h2>New Arrivals</h2>
+            <a href="#" class="view-all-center">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="products-grid">
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/mdvr-4ch-gps/400/400.jpg" alt="AI 4CH MDVR"></div><div class="pc-body"><h4>AI Based 4CH 4G LTE MDVR, built-in GPS, WiFi Hotspot, ADAS, DMS, RS232, Support upto 2TB Storage</h4><div class="pc-price"><span class="pc-old">$599.00</span><span class="pc-new">$449.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/bsj-eh03t-dashcam/400/400.jpg" alt="BSJ EH03T"></div><div class="pc-body"><h4>BSJ AI Based EH03T 4CH Dash cam 4G LTE ADAS, DMS, WiFi, GPS, Support 2*128GB memory Card</h4><div class="pc-price"><span class="pc-old">$399.00</span><span class="pc-new">$299.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/jimi-jc400p-dashcam/400/400.jpg" alt="JIMI JC400P"></div><div class="pc-body"><h4>JIMI JC400P 4G Built-in Dual Channel Dashcam 1080p full HD</h4><div class="pc-price"><span class="pc-old">$349.00</span><span class="pc-new">$279.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/azdome-m300s-4k/400/400.jpg" alt="AZDOME M300S"></div><div class="pc-body"><h4>AZDOME M300S Car Recorders 4K+1080P Rear Camera GPS Wifi Night Vision</h4><div class="pc-price"><span class="pc-old">$259.00</span><span class="pc-new">$199.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-badge sold">Sold out</div><div class="pc-img"><img src="https://picsum.photos/seed/azdome-hw03l-kit/400/400.jpg" alt="AZDOME HW03L"></div><div class="pc-body"><h4>AZDOME HW03L Car DVR HardWire Kit For M300/M300S Low Vol Protection 12V-24V</h4><div class="pc-price"><span class="pc-new">$29.00</span></div><button class="pc-btn disabled">Sold Out</button></div></div>
+            <div class="product-card"><div class="pc-img"><img src="https://picsum.photos/seed/bsj-ed02r-mdvr/400/400.jpg" alt="BSJ-ED02R"></div><div class="pc-body"><h4>[BSJ-ED02R] 4CH 4G MDVR 2*SD Card ADAS, DMS, RS232</h4><div class="pc-price"><span class="pc-new">$389.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/jimi-jc450-aicam/400/400.jpg" alt="Jimi JC450"></div><div class="pc-body"><h4>Jimi JC450 4G Vehicles AI DashCam ADAS 3/4 Channels Live Stream Video</h4><div class="pc-price"><span class="pc-old">$459.00</span><span class="pc-new">$359.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/tefco-16-screen/400/400.jpg" alt="Tefco 16 Screen"></div><div class="pc-body"><h4>Tefco 16" Android WiFi Wall Mounted Screen Monitor for School Busses</h4><div class="pc-price"><span class="pc-old">$799.00</span><span class="pc-new">$649.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- TRENDING NOW -->
+<section class="products-sec trending-sec" aria-label="Trending Now">
+    <div class="container">
+        <div class="sec-header-center-row">
+            <h2>Trending Now</h2>
+            <a href="#" class="view-all-center">View All <i class="fas fa-arrow-right"></i></a>
+        </div>
+        <div class="products-grid">
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-badge sold">Sold out</div><div class="pc-img"><img src="https://picsum.photos/seed/azdome-ht03-hardwire/400/400.jpg" alt="AZDOME HT03"></div><div class="pc-body"><h4>AZDOME HT03, 3-Lead Acc Hardwire Kit Type C Port, 12ft, for Dash Camera 24H Parking Monitor</h4><div class="pc-price"><span class="pc-new">$35.00</span></div><button class="pc-btn disabled">Sold Out</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/azdome-m660-360/400/400.jpg" alt="AZDOME M660"></div><div class="pc-body"><h4>AZDOME 360°, 4 Channels, 4 Adjustable Lenses, 128GB eMMC, 2K+1080P*3, WiFi 5G, M660</h4><div class="pc-price"><span class="pc-old">$499.00</span><span class="pc-new">$379.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-badge sold">Sold out</div><div class="pc-img"><img src="https://picsum.photos/seed/azdome-m550-max/400/400.jpg" alt="AZDOME M550 MAX"></div><div class="pc-body"><h4>AZDOME M550 MAX 3 Channel Dash Cam, Front Inside Rear, 4K+1080P GPS WiFi IR Night Vision</h4><div class="pc-price"><span class="pc-old">$329.00</span><span class="pc-new">$269.00</span></div><button class="pc-btn disabled">Sold Out</button></div></div>
+            <div class="product-card"><div class="pc-badge sale">Sale</div><div class="pc-img"><img src="https://picsum.photos/seed/azdome-m560-4k/400/400.jpg" alt="AZDOME M560"></div><div class="pc-body"><h4>AZDOME M560 3 Channel 4K Dash Cam, 4" IPS Touchscreen eMMC 128GB, WiFi, GPS</h4><div class="pc-price"><span class="pc-old">$379.00</span><span class="pc-new">$309.00</span></div><button class="pc-btn" onclick="addToCart(this)">Add to Cart</button></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- WHY US -->
+<section class="why-sec" aria-label="Why Choose Us">
+    <div class="container">
+        <h2>Why Us?</h2>
+        <div class="why-grid">
+            <div class="why-card"><div class="why-icon"><i class="fas fa-shipping-fast"></i></div><h4>Always Free Shipping</h4><p>Your satisfaction is our priority</p></div>
+            <div class="why-card"><div class="why-icon"><i class="fas fa-exchange-alt"></i></div><h4>Fast Easy and Trusted Transactions</h4><p>Secure payments every time</p></div>
+            <div class="why-card"><div class="why-icon"><i class="fas fa-headset"></i></div><h4>Your Questions, Answered</h4><p>24/7 customer support</p></div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-sec" aria-label="FAQ">
+    <div class="container">
+        <h2>Got Questions? We've Got Answers!</h2>
+        <div class="faq-list">
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>1. How can I place an order?</span><i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Browse our catalog, add items to your cart, and proceed to checkout. We accept multiple payment methods.</p></div></div>
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>2. Is it safe to shop on your website?</span><i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Yes! We use industry-standard encryption and secure payment gateways to protect your information.</p></div></div>
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>3. What is your return policy?</span><i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>We offer a 30-day return policy. Contact our support team for a hassle-free return.</p></div></div>
+            <div class="faq-item" onclick="toggleFaq(this)"><div class="faq-q"><span>4. How long will it take to receive my order?</span><i class="fas fa-chevron-down"></i></div><div class="faq-a"><p>Orders are processed within 1-2 business days. Shipping usually takes 3-7 business days.</p></div></div>
+        </div>
+    </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-sec" aria-label="Newsletter">
+    <div class="container">
+        <h2>Stay in the Loop</h2>
+        <p>Join the Club – Be First to Know About New Drops & Big Discounts!</p>
+        <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Enter your email address" aria-label="Email">
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="shop-footer">
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="shop-logo"><div class="logo-mark">IG</div><div class="logo-name">INAVON <span>GLOBAL</span></div></a>
+                <p>Your trusted partner for advanced dashcams, MDVR systems, GPS trackers, and fleet intelligence solutions. Free shipping on all orders.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="#">Dashcam & MDVR</a>
+                <a href="#">Sensors</a>
+                <a href="#">GPS Tracker</a>
+                <a href="#">Accessories</a>
+                <a href="#">RFID & UHF Readers</a>
+                <a href="#">EV Charger</a>
+                <a href="#">RFID Tags</a>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <a href="index.html">Home</a>
+                <a href="solution.html">Solutions</a>
+                <a href="products.html">Our Products</a>
+                <a href="#">About Us</a>
+                <a href="#">Blog</a>
+                <a href="#">Careers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="footer-contact-item"><i class="fas fa-map-marker-alt"></i><span>Riyadh, Saudi Arabia</span></div>
+                <div class="footer-contact-item"><i class="fas fa-phone-alt"></i><span>+966 50 000 0000</span></div>
+                <div class="footer-contact-item"><i class="fas fa-envelope"></i><span>info@inavonglobal.com</span></div>
+                <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Sun-Thu: 9AM - 6PM</span></div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 INAVON GLOBAL. All rights reserved.</p>
+            <div class="footer-payments">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+                <i class="fab fa-google-pay"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script>
+// ── Cart Counter ──
+let cartCount = 0;
+
+function addToCart(btn) {
+    if (btn.classList.contains('disabled')) return;
+    cartCount++;
+    document.getElementById('cartCountBadge').textContent = cartCount;
+
+    btn.textContent = '✓ Added!';
+    btn.style.background = '#10b981';
+    setTimeout(() => {
+        btn.textContent = 'Add to Cart';
+        btn.style.background = '';
+    }, 1500);
+
+    const badge = document.getElementById('cartCountBadge');
+    badge.style.transform = 'scale(1.4)';
+    setTimeout(() => { badge.style.transform = 'scale(1)'; }, 300);
+}
+
+// ── Hero Carousel ──
+let currentSlide = 0;
+const slides = document.querySelectorAll('.hero-slide');
+const totalSlides = slides.length;
+const dotsContainer = document.getElementById('heroDots');
+
+for (let i = 0; i < totalSlides; i++) {
+    const dot = document.createElement('div');
+    dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
+    dot.onclick = () => goToSlide(i);
+    dotsContainer.appendChild(dot);
+}
+
+function goToSlide(n) {
+    currentSlide = (n + totalSlides) % totalSlides;
+    document.getElementById('heroSlides').style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.hero-dot').forEach((d, i) => d.classList.toggle('active', i === currentSlide));
+}
+
+function changeSlide(dir) { goToSlide(currentSlide + dir); }
+
+let autoPlay = setInterval(() => changeSlide(1), 5000);
+document.querySelector('.hero-carousel').addEventListener('mouseenter', () => clearInterval(autoPlay));
+document.querySelector('.hero-carousel').addEventListener('mouseleave', () => { autoPlay = setInterval(() => changeSlide(1), 5000); });
+
+// ── FAQ Toggle ──
+function toggleFaq(el) {
+    document.querySelectorAll('.faq-item').forEach(item => { if (item !== el) item.classList.remove('open'); });
+    el.classList.toggle('open');
+}
+
+// ── Category Nav ──
+document.querySelectorAll('.cat-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+
+// ── Mobile Menu ──
+function toggleMobMenu() {
+    document.getElementById('mobMenu').classList.toggle('active');
+    document.getElementById('mobOverlay').classList.toggle('active');
+    document.getElementById('hamburgerBtn').classList.toggle('active');
+    document.body.style.overflow = document.getElementById('mobMenu').classList.contains('active') ? 'hidden' : '';
+}
+
+// ── Search Overlay ──
+function openSearchOverlay() {
+    document.getElementById('searchOverlay').classList.add('active');
+    setTimeout(() => document.getElementById('overlaySearchInput').focus(), 300);
+}
+
+function closeSearchOverlay() {
+    document.getElementById('searchOverlay').classList.remove('active');
+}
+
+document.getElementById('searchOverlay').addEventListener('click', function(e) {
+    if (e.target === this) closeSearchOverlay();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeSearchOverlay();
+        if (document.getElementById('mobMenu').classList.contains('active')) toggleMobMenu();
+    }
+});
+</script>
+
+</body>
+</html>

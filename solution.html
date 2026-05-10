@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ===== META TAGS ===== -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>INAVON GLOBAL — Empowering Business with Next-Gen RTLS Solutions</title>
+    <meta name="description" content="INAVON GLOBAL provides next-generation Real-Time Locating Systems (RTLS) using Bluetooth Angle of Arrival technology with 0.1m indoor positioning accuracy for Manufacturing, Healthcare, Logistics and Events industries.">
+    <meta name="keywords" content="RTLS, Real-Time Locating System, Indoor Positioning, Bluetooth AoA, Angle of Arrival, Asset Tracking, INAVON GLOBAL, Manufacturing RTLS, Healthcare RTLS, Logistics RTLS, IoT, Bluetooth Tags">
+    <meta name="author" content="INAVON GLOBAL">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://inavonglobal.com/">
+    <meta property="og:title" content="INAVON GLOBAL — Next-Gen RTLS Solutions">
+    <meta property="og:description" content="Empowering Business with Next Generation Real-Time Locating Systems (RTLS). Indoor positioning accuracy up to 0.1m using Bluetooth AoA technology.">
+    <meta property="og:image" content="https://inavonglobal.com/og-image.jpg">
+    <meta property="og:site_name" content="INAVON GLOBAL">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://inavonglobal.com/">
+    <meta name="twitter:title" content="INAVON GLOBAL — Next-Gen RTLS Solutions">
+    <meta name="twitter:description" content="Empowering Business with Next Generation Real-Time Locating Systems (RTLS). Indoor positioning accuracy up to 0.1m.">
+    <meta name="twitter:image" content="https://inavonglobal.com/og-image.jpg">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://inavonglobal.com/">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%239333EA'/><text x='50' y='68' font-size='50' font-family='Arial' font-weight='bold' fill='white' text-anchor='middle'>IG</text></svg>">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+     <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+
+    <!-- ===== TOP BAR ===== -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-l">
+                <a href="tel:+966882583186"><i class="fas fa-phone"></i> +966 88 258 3186</a>
+                <a href="mailto:info@inavonglobal.com"><i class="fas fa-envelope"></i> info@inavonglobal.com</a>
+            </div>
+            <div class="top-r">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+
+  
+   <!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+    <div class="container">
+        <!-- Logo ko <a> tag se wrap kiya hai -->
+        <a href="index.html" class="logo">
+            <div class="logo-ic">IG</div>
+            <div class="logo-t">INAVON <span>GLOBAL</span></div>
+        </a>
+        
+        <div class="nav-links" id="navLinks">
+            <a href="index.html" class="active">Home</a>
+            <a href="solution.html">Solutions</a>
+            <a href="products.html">Our Products</a>
+            <a href="shop.html">Shop</a>
+            <!-- Agar contact alag page hai toh href="contact.html" likhein -->
+            <a href="#contact" class="btn-p btn-sm nav-cta">Get a Quote</a>
+        </div>
+        
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mob-overlay" id="mobOverlay" onclick="toggleMenu()"></div>
+<div class="mob-menu" id="mobMenu">
+    <div class="mob-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
+    
+    <!-- Mobile menu mein bhi same file links diye hain -->
+    <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="solution.html" onclick="toggleMenu()">Solutions</a>
+    <a href="products.html" onclick="toggleMenu()">Our Products</a>
+    <a href="shop.html" onclick="toggleMenu()">Shop</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+    
+    <div class="mob-cta">
+        <a href="#contact" class="btn-p" onclick="toggleMenu()" style="width:100%;justify-content:center;">Get a Quote</a>
+    </div>
+</div>
+
+    <!-- SOLUTIONS HERO -->
+<section class="section sol-hero">
+    <div class="sol-hero-bg">
+        <img src="images/dubai solution.jpg" alt="Smart RTLS Solutions">
+        <div class="sol-overlay"></div>
+    </div>
+    <div class="container">
+        <div class="sol-hero-content anim">
+            <h1>Smart RTLS Solutions for <span>Every Industry's Need</span></h1>
+        </div>
+     
+    </div>
+</section>
+
+<!-- RTLS in Manufacturing Section -->
+<section class="section mfg-sec">
+    <div class="container">
+        <div class="mfg-content">
+            <div class="mfg-left anim">
+                <div class="sec-label"><i class="fas fa-industry"></i> RTLS in Manufacturing</div>
+                <h2>Upgrade Your Manufacturing Processes <span>with RTLS Industry 4.0 Solution </span></h2>
+                <p class="mfg-desc">A manufacturing workspace involves a number of people, vehicles and other types of assets. Using BLE AoA technology, our RTLS Manufacturing solutions cater to the need for developing a safe, orderly and productive working environment and enhance the integration of industry and information technology</p>
+                <div class="mfg-features">
+                    <div class="mfg-feat">
+                        <div class="mfg-feat-icon"><i class="fas fa-hard-hat"></i></div>
+                        <div>
+                            <h4>Guarantee Safety</h4>
+                            <p>Real-time monitoring to protect workers and prevent accidents on the factory floor</p>
+                        </div>
+                    </div>
+                    <div class="mfg-feat">
+                        <div class="mfg-feat-icon"><i class="fas fa-tasks"></i></div>
+                        <div>
+                            <h4>Maintain Order</h4>
+                            <p>Track assets and streamline workflows to keep operations running smoothly</p>
+                        </div>
+                    </div>
+                    <div class="mfg-feat">
+                        <div class="mfg-feat-icon"><i class="fas fa-chart-line"></i></div>
+                        <div>
+                            <h4>Boost Efficiency</h4>
+                            <p>Eliminate bottlenecks and reduce downtime with intelligent location insights</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="btn-p" onclick="scrollToContact()">Get a Quote <i class="fas fa-arrow-right"></i></a>
+            </div>
+            <div class="mfg-right anim">
+                <img src="images/Manufacturing.jpg" alt="RTLS in Manufacturing">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- RTLS in Healthcare Section -->
+<section class="section hcare-sec">
+    <div class="container">
+        <div class="hcare-content">
+            <div class="hcare-left anim">
+                <img src="images/Healthcare.jpg" alt="RTLS in Healthcare">
+            </div>
+            <div class="hcare-right anim">
+                <div class="sec-label"><i class="fas fa-heartbeat"></i> RTLS in Healthcare</div>
+                <h2>Experience Precision Tracking for <span>Better Healthcare Outcomes</span></h2>
+                <p class="hcare-desc">Extensive structure of hospitals is not an easy job to be taken care of. Tracking assets and staff within a healthcare environment need a proper system. Our RTLS Solution provides efficient assistance with its real-time tracking feature for staff and hospital assets.</p>
+                <div class="hcare-features">
+                    <div class="hcare-feat">
+                        <div class="hcare-feat-icon"><i class="fas fa-search"></i></div>
+                        <div>
+                            <h4>Shorten Asset Search Time</h4>
+                            <p>Locate medical equipment instantly with real-time positioning, reducing search time from hours to seconds</p>
+                        </div>
+                    </div>
+                    <div class="hcare-feat">
+                        <div class="hcare-feat-icon"><i class="fas fa-lock"></i></div>
+                        <div>
+                            <h4>Prevent Medical Equipment Theft</h4>
+                            <p>Track high-value assets and receive instant alerts when equipment leaves designated areas</p>
+                        </div>
+                    </div>
+                    <div class="hcare-feat">
+                        <div class="hcare-feat-icon"><i class="fas fa-wrench"></i></div>
+                        <div>
+                            <h4>Lower Repair Costs</h4>
+                            <p>Maintain equipment condition through proactive monitoring and timely maintenance scheduling</p>
+                        </div>
+                    </div>
+                    <div class="hcare-feat">
+                        <div class="hcare-feat-icon"><i class="fas fa-hand-holding-medical"></i></div>
+                        <div>
+                            <h4>Reduce Urgent Rentals</h4>
+                            <p>Eliminate unnecessary rental expenses by always knowing where your available assets are located</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RTLS in Logistics Section -->
+<section class="section log-sec">
+    <div class="container">
+        <div class="log-content">
+            <div class="log-left anim">
+                <div class="sec-label"><i class="fas fa-truck"></i> RTLS in Logistics</div>
+                <h2>Improve Logistics Accuracy with <span>Indoor Tracking Solutions</span></h2>
+                <p class="log-desc">Optimize your warehouse operations and supply chain visibility with our advanced RTLS solution. Leveraging BLE AoA technology, we deliver high-precision indoor positioning to streamline inventory movement, track assets in real-time, and enhance overall logistics efficiency.</p>
+                <div class="log-features">
+                    <div class="log-feat">
+                        <div class="log-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="log-feat-text">
+                            <span class="feat-heading">Sub-meter precision</span>
+                            <span class="feat-sub">High accuracy Location System</span>
+                        </div>
+                        <div class="log-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="log-feat">
+                        <div class="log-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="log-feat-text">
+                            <span class="feat-heading">Electronic fence</span>
+                            <span class="feat-sub">High connecting Capacity</span>
+                        </div>
+                        <div class="log-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="log-feat">
+                        <div class="log-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="log-feat-text">
+                            <span class="feat-heading">Individualized tracking</span>
+                            <span class="feat-sub">Cost effective</span>
+                        </div>
+                        <div class="log-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <p class="log-bottom-text">RTLS in logistics can help management to increase efficiency, reduce costs, and improve overall supply chain management. By providing real-time asset tracking insights, RTLS provides human resources or staff to make better decisions and respond in-time to changes in demand or other factors.</p>
+                </div>
+            </div>
+            <div class="log-right anim">
+                <img src="images/Logistics.jpg" alt="RTLS in Logistics">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- RTLS in Parking Spaces Section -->
+<section class="section park-sec">
+    <div class="container">
+        <div class="park-content">
+            <div class="park-left anim">
+                <img src="images/Parking-Spaces.jpg" alt="RTLS in Parking Spaces">
+            </div>
+            <div class="park-right anim">
+                <div class="sec-label"><i class="fas fa-parking"></i> RTLS in Parking Spaces</div>
+                <h2>Optimize Parking Operations with <span>RTLS Solution</span></h2>
+                <p class="park-desc">Drivers often find it difficult to look for a parking spot, especially during the rush hours. Our RTLS solutions provide Bluetooth AoA technology to promote car park management by providing high-precision indoor positioning solutions which end the hassle of drivers and make parking easy and faster. It also helps with reducing fuel cost as it saves drivers from aimless searches. </p>
+                <div class="park-features">
+                    <div class="park-feat">
+                        <div class="park-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="park-feat-text">
+                            <span class="feat-heading">Efficient Management</span>
+                            <span class="feat-sub">Improve Customer Service</span>
+                        </div>
+                        <div class="park-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="park-feat">
+                        <div class="park-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="park-feat-text">
+                            <span class="feat-heading">High Accuracy Location System</span>
+                            <span class="feat-sub">High connecting Capacity</span>
+                        </div>
+                        <div class="park-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="park-feat">
+                        <div class="park-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="park-feat-text">
+                            <span class="feat-heading">Cost Effective</span>
+                            <span class="feat-sub">Individualized tracking</span>
+                        </div>
+                        <div class="park-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <p class="park-bottom-text">Gain insights to optimize overall parking experience for the drivers but integrating RTLS parking management solutions. Experience real-time location data of vehicles within a parking facility and promote better car parking management. .</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RTLS in Public Security Section -->
+<section class="section sec-sec">
+    <div class="container">
+        <div class="sec-content">
+            <div class="sec-left anim">
+                <div class="sec-label"><i class="fas fa-shield-alt"></i> RTLS in Public Security</div>
+                <h2>Empowering Public Security Sector with <span>Advanced RTLS Solution</span></h2>
+                <p class="sec-desc">The strict and numerous structural spaces in public security systems demand an efficient and convenient solution to track staff and assets in real-time. Our RTLS solution provides law enforcement agencies with high-accuracy BLE indoor positioning technology, to keep staff and detainees safe, and to modernize and standardize the law enforcement process.</p>
+                <div class="sec-features">
+                    <div class="sec-feat">
+                        <div class="sec-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="sec-feat-text">
+                            <span class="feat-heading">Safety and Security</span>
+                            <span class="feat-sub">Real-time monitoring to protect personnel and public spaces</span>
+                        </div>
+                        <div class="sec-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="sec-feat">
+                        <div class="sec-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="sec-feat-text">
+                            <span class="feat-heading">High Accuracy Location System</span>
+                            <span class="feat-sub">Centimeter-level precision for critical security operations</span>
+                        </div>
+                        <div class="sec-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="sec-feat">
+                        <div class="sec-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="sec-feat-text">
+                            <span class="feat-heading">Cost Effective</span>
+                            <span class="feat-sub">Reduce security operational costs with smart automation</span>
+                        </div>
+                        <div class="sec-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <p class="sec-bottom-text">The RTLS solution’s tracking capabilities can provide real-time location data on officers, prisoners, and automobiles to better improve law enforcement, which leads to a safer and more secure environment for citizens..</p>
+                </div>
+            </div>
+            <div class="sec-right anim">
+                <img src="images/Safety-and-Security.jpg" alt="RTLS in Public Security">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RTLS in Events Section -->
+<section class="section evt-sec">
+    <div class="container">
+        <div class="evt-content">
+            <div class="evt-left anim">
+                <div class="sec-label"><i class="fas fa-calendar-alt"></i> RTLS in Events</div>
+                <h2>Experience Safer Events with <span>Real-time Tracking</span></h2>
+                <p class="evt-desc">In this era safety is without doubt the foremost important thing. With events happening all around the Nation, digitizing the management processes helps with efficient locating of assets and attendees. Our RTLS solution equip with AoA Bluetooth positioning guarantee the safety of audience and improves management.</p>
+                <div class="evt-features">
+                    <div class="evt-feat">
+                        <div class="evt-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="evt-feat-text">
+                            <span class="feat-heading">Real-time Location</span>
+                            <span class="feat-sub">Instant positioning of assets and attendees</span>
+                        </div>
+                        <div class="evt-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="evt-feat">
+                        <div class="evt-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="evt-feat-text">
+                            <span class="feat-heading">Efficient Management</span>
+                            <span class="feat-sub">Streamline event operations with digital tracking</span>
+                        </div>
+                        <div class="evt-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="evt-feat">
+                        <div class="evt-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="evt-feat-text">
+                            <span class="feat-heading">Enhanced Safety and Security</span>
+                            <span class="feat-sub">Protect audience with real-time monitoring</span>
+                        </div>
+                        <div class="evt-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="evt-feat">
+                        <div class="evt-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="evt-feat-text">
+                            <span class="feat-heading">High Connecting Capacity</span>
+                            <span class="feat-sub">Support large-scale events with thousands of connections</span>
+                        </div>
+                        <div class="evt-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="evt-feat">
+                        <div class="evt-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="evt-feat-text">
+                            <span class="feat-heading">Cost Effective</span>
+                            <span class="feat-sub">Reduce operational costs with smart automation</span>
+                        </div>
+                        <div class="evt-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <div class="evt-feat">
+                        <div class="evt-feat-check"><i class="fas fa-check"></i></div>
+                        <div class="evt-feat-text">
+                            <span class="feat-heading">Individualized Tracking</span>
+                            <span class="feat-sub">Custom tracking for specific attendees and assets</span>
+                        </div>
+                        <div class="evt-feat-arrow"><i class="fas fa-arrow-right"></i></div>
+                    </div>
+                    <p class="evt-bottom-text">RTLS tracking can provide critical and enhanced security personnel management during events by providing real-time location data. With the Bluetooth technology, event operators can enhance attendees satisfaction and cater to their diverse needs in a more efficient way.</p>
+                </div>
+            </div>
+            <div class="evt-right anim">
+                <img src="images/rtls events.jpg" alt="RTLS in Events">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+    <!-- ===== FOOTER (Global) ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="foot-brand">
+                <div class="logo-t" style="margin-bottom:12px;">INAVON <span>GLOBAL</span></div>
+                <p>Empowering business with next-generation Real-Time Locating Systems (RTLS). Safe, reliable, and cost-effective indoor positioning solutions.</p>
+                <div class="foot-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="foot-col">
+                <h4>Quick Links</h4>
+                <a href="#" onclick="showPage('home')">Home</a>
+                <a href="#" onclick="showPage('solutions')">Solutions</a>
+                <a href="#" onclick="showPage('products')">Our Products</a>
+                <a href="#" onclick="showPage('shop')">Shop</a>
+                <a href="#" onclick="scrollToContact()">Contact Us</a>
+            </div>
+            <div class="foot-col">
+                <h4>Solutions</h4>
+                <a href="#" onclick="showPage('solutions')">Manufacturing</a>
+                <a href="#" onclick="showPage('solutions')">Healthcare</a>
+                <a href="#" onclick="showPage('solutions')">Logistics</a>
+                <a href="#" onclick="showPage('solutions')">Events</a>
+            </div>
+            <div class="foot-col foot-contact">
+                <h4>Get in Touch</h4>
+                <div class="fc-item"><i class="fas fa-phone"></i><span>+966 55 304 4161</span></div>
+                <div class="fc-item"><i class="fas fa-envelope"></i><span>info@inavonglobal.com</span></div>
+                <div class="fc-item"><i class="fas fa-map-marker-alt"></i><span>2537 Street Number 78, 8891, Al Olaya Dist, Riyadh 12214</span></div>
+            </div>
+        </div>
+        <div class="foot-bottom">
+            <div class="container">
+                &copy; 2024 INAVON GLOBAL. All rights reserved. | Privacy Policy | Terms of Service
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCROLL TO TOP -->
+    <button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+     <script>
+        // ===== PAGE NAVIGATION =====
+        function showPage(page) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+            // Show selected page
+            document.getElementById('page-' + page).classList.add('active');
+            // Update nav active state
+            document.querySelectorAll('.nav-links a[data-page], .mob-menu a[data-page]').forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('data-page') === page) a.classList.add('active');
+            });
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Re-trigger animations
+            setTimeout(initAnimations, 100);
+        }
+
+        // ===== SCROLL TO CONTACT =====
+        function scrollToContact() {
+            showPage('home');
+            setTimeout(() => {
+                document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            }, 200);
+        }
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            const menu = document.getElementById('mobMenu');
+            const overlay = document.getElementById('mobOverlay');
+            const hamburger = document.getElementById('hamburger');
+            menu.classList.toggle('open');
+            overlay.classList.toggle('open');
+            hamburger.classList.toggle('active');
+            document.body.style.overflow = menu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        // ===== FORM SUBMIT =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            const msg = document.getElementById('formMsg');
+            msg.style.display = 'block';
+            e.target.reset();
+            setTimeout(() => { msg.style.display = 'none'; }, 5000);
+        }
+
+        // ===== SHOP FILTER =====
+        function filterShop(cat, btn) {
+            // Update active button
+            document.querySelectorAll('.shop-filter').forEach(f => f.classList.remove('active'));
+            btn.classList.add('active');
+            // Filter cards
+            document.querySelectorAll('.shop-card').forEach(card => {
+                if (cat === 'all' || card.getAttribute('data-cat') === cat) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // ===== SCROLL TO TOP BUTTON =====
+        window.addEventListener('scroll', () => {
+            const btn = document.getElementById('scrollTop');
+            if (window.scrollY > 500) {
+                btn.classList.add('visible');
+            } else {
+                btn.classList.remove('visible');
+            }
+        });
+
+        // ===== SCROLL ANIMATIONS =====
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+            document.querySelectorAll('.anim').forEach(el => {
+                el.classList.remove('visible');
+                observer.observe(el);
+            });
+        }
+
+        // ===== NAVBAR SCROLL EFFECT =====
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            const currentScroll = window.scrollY;
+            if (currentScroll > 100) {
+                navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
+            } else {
+                navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.04)';
+            }
+            lastScroll = currentScroll;
+        });
+
+        // ===== INIT =====
+        document.addEventListener('DOMContentLoaded', () => {
+            initAnimations();
+        });
+    </script>
+</body>
+</html>
