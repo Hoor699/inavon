@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>INAVON GLOBAL — Empowering Business with Next-Gen RTLS Solutions</title>
-    <meta name="description" content="INAVON GLOBAL provides next-generation Real-Time Locating Systems (RTLS) using Bluetooth Angle of Arrival technology with 0.1m indoor positioning accuracy for Manufacturing, Healthcare, Logistics and Events industries.">
-    <meta name="keywords" content="RTLS, Real-Time Locating System, Indoor Positioning, Bluetooth AoA, Angle of Arrival, Asset Tracking, INAVON GLOBAL, Manufacturing RTLS, Healthcare RTLS, Logistics RTLS, IoT, Bluetooth Tags">
+    <title>INAVON GLOBAL — GPS Tracking Hardware, IoT Sensors & Telematics Solutions</title>
+    <meta name="description" content="Inavon Global supports GPS tracking companies, telematics providers, system integrators, and resellers with reliable hardware, IoT sensors, connectivity devices, and solution consultancy.">
+    <meta name="keywords" content="GPS Tracking Hardware, IoT Sensors, Telematics Devices, Fleet Management, Asset Tracking, Cold Chain Monitoring, INAVON GLOBAL, System Integrators, Resellers, IoT Gateways">
     <meta name="author" content="INAVON GLOBAL">
     <meta name="robots" content="index, follow">
     <meta name="language" content="English">
@@ -16,16 +16,16 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://inavonglobal.com/">
-    <meta property="og:title" content="INAVON GLOBAL — Next-Gen RTLS Solutions">
-    <meta property="og:description" content="Empowering Business with Next Generation Real-Time Locating Systems (RTLS). Indoor positioning accuracy up to 0.1m using Bluetooth AoA technology.">
+    <meta property="og:title" content="INAVON GLOBAL — GPS Tracking Hardware & IoT Solutions">
+    <meta property="og:description" content="Empowering Tracking & IoT Businesses with Reliable Hardware, Sensors, and Connected Solutions.">
     <meta property="og:image" content="https://inavonglobal.com/og-image.jpg">
     <meta property="og:site_name" content="INAVON GLOBAL">
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://inavonglobal.com/">
-    <meta name="twitter:title" content="INAVON GLOBAL — Next-Gen RTLS Solutions">
-    <meta name="twitter:description" content="Empowering Business with Next Generation Real-Time Locating Systems (RTLS). Indoor positioning accuracy up to 0.1m.">
+    <meta name="twitter:title" content="INAVON GLOBAL — GPS Tracking Hardware & IoT Solutions">
+    <meta name="twitter:description" content="Empowering Tracking & IoT Businesses with Reliable Hardware, Sensors, and Connected Solutions.">
     <meta name="twitter:image" content="https://inavonglobal.com/og-image.jpg">
 
     <!-- Canonical -->
@@ -38,7 +38,55 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- ===== PREMIUM ANIMATIONS CSS ===== -->
+    <style>
+        /* Base Animation State */
+        .anim {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        /* Specific Slide Directions */
+        .anim-left {
+            transform: translateX(-60px) translateY(0);
+        }
+        .anim-right {
+            transform: translateX(60px) translateY(0);
+        }
+        .anim-scale {
+            transform: scale(0.9);
+        }
+
+        /* Triggered State */
+        .visible {
+            opacity: 1 !important;
+            transform: translateY(0) translateX(0) scale(1) !important;
+        }
+
+        /* Stagger Delays for Premium Sequential Effect */
+        .delay-1 { transition-delay: 0.1s; }
+        .delay-2 { transition-delay: 0.2s; }
+        .delay-3 { transition-delay: 0.3s; }
+        .delay-4 { transition-delay: 0.4s; }
+        .delay-5 { transition-delay: 0.5s; }
+        .delay-6 { transition-delay: 0.6s; }
+
+        /* Hero Specific Fast Load Animation */
+        .hero .anim {
+            transition-duration: 1s;
+        }
+        
+        /* Floating cards specific hover animation */
+        .hero-float {
+            transition: transform 0.3s ease;
+        }
+        .hero-float:hover {
+            transform: translateY(-5px) scale(1.05) !important;
+        }
+    </style>
    
 </head>
 <body>
@@ -62,7 +110,6 @@
    <!-- ===== NAVBAR ===== -->
 <nav class="navbar">
     <div class="container">
-        <!-- Logo ko <a> tag se wrap kiya hai -->
         <a href="index.html" class="logo">
             <div class="logo-ic">IG</div>
             <div class="logo-t">INAVON <span>GLOBAL</span></div>
@@ -73,7 +120,6 @@
             <a href="solution.html">Solutions</a>
             <a href="products.html">Our Products</a>
             <a href="shop.html">Shop</a>
-            <!-- Agar contact alag page hai toh href="contact.html" likhein -->
             <a href="#contact" class="btn-p btn-sm nav-cta">Get a Quote</a>
         </div>
         
@@ -88,7 +134,6 @@
 <div class="mob-menu" id="mobMenu">
     <div class="mob-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
     
-    <!-- Mobile menu mein bhi same file links diye hain -->
     <a href="index.html" onclick="toggleMenu()">Home</a>
     <a href="solution.html" onclick="toggleMenu()">Solutions</a>
     <a href="products.html" onclick="toggleMenu()">Our Products</a>
@@ -108,28 +153,30 @@
         <!-- HERO -->
         <section class="hero">
             <div class="container">
-                <div class="hero-l anim">
-                    <div class="hero-badge"><i class="fas fa-bolt"></i> Next-Gen RTLS Technology</div>
-                    <h1>Empowering Business with <span>Next Generation</span> Real-Time Locating Systems (RTLS)</h1>
+                <div class="hero-l">
+                    <div class="hero-badge anim delay-1"><i class="fas fa-satellite-dish"></i> Hardware, Sensors & IoT Solutions</div>
+                    <h1 class="anim delay-2">GPS Tracking, Telematics & IoT Hardware Solutions for <span>Technology Partners</span></h1>
+                    <p class="anim delay-3" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 24px; color: #555;">Inavon Global helps GPS tracking companies, telematics providers, IoT solution providers, system integrators, and resellers source, integrate, and deploy reliable hardware, sensors, gateways, and connected solutions for real-world business applications.</p>
                 
-                    <div class="hero-btns">
-                        <a href="#" class="btn-p" onclick="scrollToContact()">Get a Demo <i class="fas fa-arrow-right"></i></a>
+                    <div class="hero-btns anim delay-4">
+                        <a href="#contact" class="btn-p" onclick="scrollToContact()">Become a Partner <i class="fas fa-arrow-right"></i></a>
                         <a href="#" class="btn-o" onclick="showPage('solutions')">Explore Solutions <i class="fas fa-chevron-right"></i></a>
+                        <a href="#contact" class="btn-o" onclick="scrollToContact()" style="border-color: #3398ea; color: #000000;">Request Catalogue <i class="fas fa-book"></i></a>
                     </div>
                 </div>
-                <div class="hero-r anim">
-                    <div class="hero-img">
-                        <img src="images/banner-1-1536x1536.png" alt="RTLS Office 3D Illustration">
+                <div class="hero-r">
+                    <div class="hero-img anim-right delay-2">
+                        <img src="images/b" alt="GPS Tracking and IoT Hardware Solutions">
                     </div>
-                    <div class="hero-float f1">
-                        <div class="icon pur"><i class="fas fa-map-marker-alt"></i></div>
-                        <div class="val">0.1m</div>
-                        <div class="txt">Accuracy</div>
+                    <div class="hero-float f1 anim-scale delay-5">
+                        <div class="icon pur"><i class="fas fa-globe"></i></div>
+                        <div class="val">GPS+</div>
+                        <div class="txt">IoT Tech</div>
                     </div>
-                    <div class="hero-float f2">
-                        <div class="icon grn"><i class="fas fa-chart-line"></i></div>
-                        <div class="val">99.9%</div>
-                        <div class="txt">Uptime</div>
+                    <div class="hero-float f2 anim-scale delay-6">
+                        <div class="icon grn"><i class="fas fa-handshake"></i></div>
+                        <div class="val">B2B</div>
+                        <div class="txt">Partner Focus</div>
                     </div>
                 </div>
             </div>
@@ -138,115 +185,114 @@
         <!-- STATS -->
         <section class="stats-bar">
             <div class="container">
-                <div class="stat-item anim"><div class="num">0.1m</div><div class="lbl">Positioning Accuracy</div></div>
-                <div class="stat-item anim"><div class="num">500+</div><div class="lbl">Assets Tracked</div></div>
-                <div class="stat-item anim"><div class="num">50+</div><div class="lbl">Enterprise Clients</div></div>
-                <div class="stat-item anim"><div class="num">99.9%</div><div class="lbl">System Uptime</div></div>
+                <div class="stat-item anim delay-1"><div class="num">100+</div><div class="lbl">Hardware & Sensors</div></div>
+                <div class="stat-item anim delay-2"><div class="num">10+</div><div class="lbl">Industry Solutions</div></div>
+                <div class="stat-item anim delay-3"><div class="num">50+</div><div class="lbl">Technology Partners</div></div>
+                <div class="stat-item anim delay-4"><div class="num">24/7</div><div class="lbl">Integration Support</div></div>
             </div>
         </section>
 
-       <!-- RTLS SECTION -->
+       <!-- ABOUT / WHAT WE PROVIDE SECTION -->
 <section class="section rtls-sec">
     <div class="container">
-        <div class="rtls-l anim">
-            <img src="images/2-banner-image.png" alt="RTLS Factory Automation">
+        <div class="rtls-l anim-left delay-2">
+            <img src="images/2-banner-image.png" alt="IoT Technology Partner Integration">
         </div>
-        <div class="rtls-r anim">
-            <div class="sec-label"><i class="fas fa-satellite-dish"></i> About RTLS</div>
-            <h2 class="sec-title">Transforming Operations with <span>Real-Time Location Systems</span></h2>
-            <p class="sec-subtitle">Give Your Business a Secure, Reliable and Cost Effective Solution</p>
-            <p class="sec-desc">We provide RTLS and positioning equipment to help you get accurate data for your business. Our Real-Time Locating System utilizes advanced Bluetooth Angle of Arrival (AoA) algorithm, delivering indoor positioning accuracy of up to 0.1 meters with low power consumption.</p>
+        <div class="rtls-r">
+            <div class="sec-label anim delay-1"><i class="fas fa-microchip"></i> About Inavon Global</div>
+            <h2 class="sec-title anim delay-2">A Technology Partner for <span>Tracking, Telematics & IoT</span> Companies</h2>
+            <p class="sec-subtitle anim delay-3">More Than a Supplier — A Solution Enablement Partner</p>
+            <p class="sec-desc anim delay-3">Inavon Global is a technology company focused on GPS tracking hardware, IoT sensors, telematics devices, gateways, accessories, and connected infrastructure. Our role is to support technology companies with reliable products, technical guidance, solution design, integration support, and scalable hardware supply.</p>
             <div class="feature-list">
-                <div class="feature-item">
-                    <div class="fi-icon"><i class="fas fa-crosshairs"></i></div>
-                    <div class="fi-t"><h4>High Accuracy</h4><p>0.1m precision with Bluetooth AoA technology</p></div>
+                <div class="feature-item anim delay-4">
+                    <div class="fi-icon"><i class="fas fa-check-circle"></i></div>
+                    <div class="fi-t"><h4>Right Hardware for Every Use Case</h4><p>We help companies select suitable devices and sensors based on project requirements, connectivity, accuracy, battery life, and platform compatibility.</p></div>
                 </div>
-                <div class="feature-item">
-                    <div class="fi-icon"><i class="fas fa-bolt"></i></div>
-                    <div class="fi-t"><h4>Low Power Consumption</h4><p>Energy-efficient design for long-term deployment</p></div>
+                <div class="feature-item anim delay-5">
+                    <div class="fi-icon"><i class="fas fa-plug"></i></div>
+                    <div class="fi-t"><h4>Integration-Ready Approach</h4><p>We help simplify the connection between hardware, sensors, gateways, and software platforms so solutions can be delivered faster.</p></div>
                 </div>
-                <div class="feature-item">
-                    <div class="fi-icon"><i class="fas fa-coins"></i></div>
-                    <div class="fi-t"><h4>Low Cost</h4><p>Lower total cost of ownership vs. competing solutions</p></div>
+                <div class="feature-item anim delay-6">
+                    <div class="fi-icon"><i class="fas fa-boxes"></i></div>
+                    <div class="fi-t"><h4>Scalable Supply & Project Support</h4><p>Whether you need devices for testing, pilot projects, or large-scale deployment, Inavon Global can support reliable supply and technical coordination.</p></div>
                 </div>
             </div>
-            <a href="#" class="btn-p" onclick="showPage('solutions')">Learn More <i class="fas fa-arrow-right"></i></a>
+            <a href="#" class="btn-p anim delay-6" onclick="showPage('solutions')">Learn More <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </section>
   
-       <!-- INDUSTRIES -->
+       <!-- SOLUTIONS WE SUPPORT -->
 <section class="section ind-sec" id="industries">
     <div class="container">
         <div class="ind-content">
             <!-- Left: Content -->
-            <div class="ind-left anim">
-                <div class="sec-label"><i class="fas fa-industry"></i> Industries</div>
-                <h2>Driving Success <span>Across Industries</span></h2>
-                <p class="ind-desc">Our RTLS platform provides hardware & software for tracking of indoor assets and personnel in manufacturing, healthcare, sports, events, logistics and more industries.</p>
+            <div class="ind-left">
+                <div class="sec-label anim delay-1"><i class="fas fa-project-diagram"></i> Solutions We Support</div>
+                <h2 class="anim delay-2">Connected Solutions for <span>Modern Tracking & IoT</span> Businesses</h2>
+                <p class="ind-desc anim delay-3">Inavon Global enables companies to deliver a wide range of connected solutions, helping businesses move faster from project idea to successful deployment.</p>
                 <div class="ind-features">
-                    <div class="ind-feat">
-                        <div class="feat-icon"><i class="fas fa-satellite-dish"></i></div>
-                        <p>Advance Angle of Arrival (AoA) positioning technology</p>
+                    <div class="ind-feat anim delay-3">
+                        <div class="feat-icon"><i class="fas fa-truck"></i></div>
+                        <p>Fleet management, Vehicle GPS tracking, and Logistics visibility</p>
                     </div>
-                    <div class="ind-feat">
-                        <div class="feat-icon"><i class="fas fa-map-marked-alt"></i></div>
-                        <p>On point tracking and navigation services in multiple scenarios</p>
+                    <div class="ind-feat anim delay-4">
+                        <div class="feat-icon"><i class="fas fa-thermometer-half"></i></div>
+                        <p>Cold chain monitoring, Fuel monitoring, and Industrial IoT</p>
                     </div>
-                    <div class="ind-feat">
-                        <div class="feat-icon"><i class="fas fa-shield-alt"></i></div>
-                        <p>Uplift business potential by improving efficiency and ensuring safety</p>
+                    <div class="ind-feat anim delay-5">
+                        <div class="feat-icon"><i class="fas fa-city"></i></div>
+                        <p>Smart city IoT solutions, BLE-based asset visibility, and Connectivity</p>
                     </div>
                 </div>
-                <a href="#" class="explore-btn" onclick="showPage('solutions')">Explore All Solutions <i class="fas fa-arrow-right"></i></a>
+                <a href="#" class="explore-btn anim delay-6" onclick="showPage('solutions')">Explore All Solutions <i class="fas fa-arrow-right"></i></a>
             </div>
             <!-- Right: 4 Grid Images -->
             <div class="ind-grid">
-                <div class="ind-card anim">
-                    <img src="images/rtls manfac.webp" alt="RTLS in Manufacturing">
+                <div class="ind-card anim delay-1">
+                    <img src="images/rtls manfac.webp" alt="Fleet Management & Vehicle GPS Tracking">
                     <div class="ind-overlay"></div>
                     <div class="ind-body">
-                        <h3>RTLS in Manufacturing</h3>
+                        <h3>Fleet Management</h3>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Guarantee Safety</li>
-                            <li><i class="fas fa-check-circle"></i> Maintain Order</li>
+                            <li><i class="fas fa-check-circle"></i> Vehicle GPS Tracking</li>
+                            <li><i class="fas fa-check-circle"></i> Driver Behavior</li>
                         </ul>
                     </div>
                 </div>
-                <div class="ind-card anim">
-                    <img src="images/rtls healthcare.jpeg" alt="RTLS in Healthcare">
+                <div class="ind-card anim delay-2">
+                    <img src="images/rtls healthcare.jpeg" alt="Asset Tracking & Cold Chain Monitoring">
                     <div class="ind-overlay"></div>
                     <div class="ind-body">
-                        <h3>RTLS in Healthcare</h3>
+                        <h3>Asset & Cold Chain</h3>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Lower Repair Costs</li>
-                            <li><i class="fas fa-check-circle"></i> Reduce Urgent Rentals</li>
-                            <li><i class="fas fa-check-circle"></i> High Connectivity Capacity</li>
+                            <li><i class="fas fa-check-circle"></i> Temperature & Humidity</li>
+                            <li><i class="fas fa-check-circle"></i> Cargo & Trailer</li>
+                            <li><i class="fas fa-check-circle"></i> Non-powered Assets</li>
                         </ul>
                     </div>
                 </div>
-                <div class="ind-card anim">
-                    <img src="images/rtls logistic.jpg" alt="RTLS in Logistics">
+                <div class="ind-card anim delay-3">
+                    <img src="images/rtls logistic.jpg" alt="Smart City & Industrial IoT">
                     <div class="ind-overlay"></div>
                     <div class="ind-body">
-                        <h3>RTLS in Logistics</h3>
+                        <h3>Smart City & Industrial IoT</h3>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Sub-meter precision</li>
-                            <li><i class="fas fa-check-circle"></i> Electronic fence</li>
-                            <li><i class="fas fa-check-circle"></i> Individualized tracking</li>
+                            <li><i class="fas fa-check-circle"></i> Environmental Monitoring</li>
+                            <li><i class="fas fa-check-circle"></i> Smart Infrastructure</li>
+                            <li><i class="fas fa-check-circle"></i> Warehouse Facility</li>
                         </ul>
                     </div>
                 </div>
-                <div class="ind-card anim">
-                    <img src="images/rtls events.jpg" alt="RTLS in Events">
+                <div class="ind-card anim delay-4">
+                    <img src="images/rtls events.jpg" alt="Fuel Monitoring & Video Telematics">
                     <div class="ind-overlay"></div>
                     <div class="ind-body">
-                        <h3>RTLS in Events</h3>
+                        <h3>Fuel & Video Telematics</h3>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Real-time Location</li>
-                            <li><i class="fas fa-check-circle"></i> Efficient Management</li>
-                            <li><i class="fas fa-check-circle"></i> Cost effective</li>
-                            <li><i class="fas fa-check-circle"></i> Boost Efficiency</li>
+                            <li><i class="fas fa-check-circle"></i> Fuel Level & Theft</li>
+                            <li><i class="fas fa-check-circle"></i> Dash Cameras & ADAS</li>
+                            <li><i class="fas fa-check-circle"></i> Event-based Video</li>
                         </ul>
                     </div>
                 </div>
@@ -259,52 +305,52 @@
         <section class="section prod-home">
             <div class="container">
                 <div class="sec-header anim" style="text-align:center;margin-bottom:48px;">
-                    <div class="sec-label" style="justify-content:center;"><i class="fas fa-microchip"></i> </div>
-                    <h2 class="sec-title">INAVON GLOBAL's <span>Angle of Arrival</span> Indoor Positioning System</h2>
+                    <div class="sec-label" style="justify-content:center;"><i class="fas fa-cubes"></i> What We Provide</div>
+                    <h2 class="sec-title anim delay-1">Everything Companies Need to Build <span>Connected Tracking Solutions</span></h2>
                 </div>
                 <div class="prod-grid2">
-                    <div class="prod-card2 anim">
-                        <div class="pc-icon"><i class="fas fa-laptop-code"></i></div>
-                        <h3>Software</h3>
-                        <div class="pc-sub">Engine and Application Platform</div>
+                    <div class="prod-card2 anim delay-1">
+                        <div class="pc-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <h3>GPS Tracking Devices</h3>
+                        <div class="pc-sub">Reliable GPS Trackers</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Basic Real-time Locating System</li>
-                            <li><i class="fas fa-check-circle"></i> Value-added Applications</li>
-                            <li><i class="fas fa-check-circle"></i> Mobile Application (iOS & Android)</li>
+                            <li><i class="fas fa-check-circle"></i> For vehicles, fleets, trailers, and assets</li>
+                            <li><i class="fas fa-check-circle"></i> Equipment and mobile operations</li>
+                            <li><i class="fas fa-check-circle"></i> Asset Trackers for containers & cargo</li>
                         </ul>
                     </div>
-                    <div class="prod-card2 anim">
+                    <div class="prod-card2 anim delay-2">
                         <div class="pc-icon"><i class="fas fa-broadcast-tower"></i></div>
-                        <h3>AoA Anchor</h3>
-                        <div class="pc-sub">Locating Anchor Hardware</div>
+                        <h3>IoT Sensors & Gateways</h3>
+                        <div class="pc-sub">Connectivity & Monitoring</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Positioning accuracy up to 0.1m</li>
-                            <li><i class="fas fa-check-circle"></i> Support Bluetooth IoT data back transmission</li>
-                            <li><i class="fas fa-check-circle"></i> Compatible with iOS/Android</li>
+                            <li><i class="fas fa-check-circle"></i> Temperature, humidity, & BLE sensors</li>
+                            <li><i class="fas fa-check-circle"></i> IoT gateways, routers, & switches</li>
+                            <li><i class="fas fa-check-circle"></i> Data collection & cloud communication</li>
                         </ul>
                     </div>
-                    <div class="prod-card2 anim">
-                        <div class="pc-icon"><i class="fas fa-tag"></i></div>
-                        <h3>Bluetooth Tags</h3>
-                        <div class="pc-sub">Location Tags / Mobiles</div>
+                    <div class="prod-card2 anim delay-3">
+                        <div class="pc-icon"><i class="fas fa-car"></i></div>
+                        <h3>Telematics & Fuel Devices</h3>
+                        <div class="pc-sub">Fleet Intelligence Hardware</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> High-precision positioning (0.1 - 1m)</li>
-                            <li><i class="fas fa-check-circle"></i> Card design, easy to carry</li>
-                            <li><i class="fas fa-check-circle"></i> RFID compatible</li>
+                            <li><i class="fas fa-check-circle"></i> Driver behavior, CAN data, tachograph</li>
+                            <li><i class="fas fa-check-circle"></i> Fuel level monitoring & theft detection</li>
+                            <li><i class="fas fa-check-circle"></i> Dash cameras, ADAS, & DMS systems</li>
                         </ul>
                     </div>
-                    <div class="prod-card2 anim">
-                        <div class="pc-icon"><i class="fas fa-plug"></i></div>
-                        <h3>Open API</h3>
-                        <div class="pc-sub">Locating and IoT Data Interface</div>
+                    <div class="prod-card2 anim delay-4">
+                        <div class="pc-icon"><i class="fas fa-toolbox"></i></div>
+                        <h3>Accessories & Consultancy</h3>
+                        <div class="pc-sub">Deployment & Support</div>
                         <ul>
-                            <li><i class="fas fa-check-circle"></i> Open API interface for integration</li>
-                            <li><i class="fas fa-check-circle"></i> Real-time location tracking data</li>
-                            <li><i class="fas fa-check-circle"></i> BLE technology integration</li>
+                            <li><i class="fas fa-check-circle"></i> Cables, antennas, relays, & RFID readers</li>
+                            <li><i class="fas fa-check-circle"></i> Product selection & use-case design</li>
+                            <li><i class="fas fa-check-circle"></i> Platform compatibility & integration</li>
                         </ul>
                     </div>
                 </div>
-                <div style="text-align:center;margin-top:40px;" class="anim">
+                <div style="text-align:center;margin-top:40px;" class="anim delay-5">
                     <a href="#" class="btn-o" onclick="showPage('products')">View All Products <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
@@ -315,31 +361,31 @@
             <div class="container">
                 <div class="sec-header anim">
                     <div class="sec-label" style="justify-content:center;"><i class="fas fa-quote-left"></i> Testimonials</div>
-                    <h2 class="sec-title">What Our <span>Clients Say</span></h2>
+                    <h2 class="sec-title anim delay-1">What Our <span>Partners Say</span></h2>
                 </div>
                 <div class="test-grid">
-                    <div class="test-card anim">
+                    <div class="test-card anim delay-1">
                         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="t-text">"Thanks to INAVON GLOBAL's RTLS platform, our tracking and data management have significantly improved. The system is essential for streamlining our workflows."</p>
+                        <p class="t-text">"Thanks to Inavon Global's hardware supply and consultancy, our fleet management deployments have significantly improved. Their integration support is essential for streamlining our projects."</p>
                         <div class="t-author">
                             <div class="t-avatar">JD</div>
-                            <div><div class="t-name">John Davis</div><div class="t-role">Logistics Coordinator</div></div>
+                            <div><div class="t-name">John Davis</div><div class="t-role">System Integrator</div></div>
                         </div>
                     </div>
-                    <div class="test-card anim">
+                    <div class="test-card anim delay-2">
                         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="t-text">"The accuracy of 0.1m positioning has transformed our manufacturing operations. We can now track every asset in real-time with incredible precision."</p>
+                        <p class="t-text">"The reliability of their GPS trackers and IoT sensors has transformed our asset tracking operations. We can now deliver scalable solutions to our clients with absolute confidence."</p>
                         <div class="t-author">
                             <div class="t-avatar">SM</div>
-                            <div><div class="t-name">Sarah Miller</div><div class="t-role">Operations Manager</div></div>
+                            <div><div class="t-name">Sarah Miller</div><div class="t-role">Fleet Solutions Provider</div></div>
                         </div>
                     </div>
-                    <div class="test-card anim">
+                    <div class="test-card anim delay-3">
                         <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                        <p class="t-text">"Implementing the RTLS in our hospital has greatly improved equipment tracking and patient flow. The open API made integration seamless."</p>
+                        <p class="t-text">"Implementing cold chain monitoring with their sensors and gateways made integration seamless. The right hardware selection guidance saved us weeks of development time."</p>
                         <div class="t-author">
                             <div class="t-avatar">AK</div>
-                            <div><div class="t-name">Dr. Ahmed Khan</div><div class="t-role">Healthcare Director</div></div>
+                            <div><div class="t-name">Ahmed Khan</div><div class="t-role">IoT Solution Provider</div></div>
                         </div>
                     </div>
                 </div>
@@ -349,28 +395,28 @@
         <!-- CTA / CONTACT -->
         <section class="section cta-sec" id="contact">
             <div class="container">
-                <div class="cta-l anim">
+                <div class="cta-l anim-left delay-2">
                     <div class="sec-label"><i class="fas fa-rocket"></i> Get Started</div>
-                    <h2 class="sec-title">Optimize Operations with <span>RTLS Today</span></h2>
-                    <p class="sec-desc">Request a demo now and discover how INAVON GLOBAL's RTLS platform can transform your business operations with next-generation indoor positioning technology.</p>
+                    <h2 class="sec-title">Looking for <span>Reliable Hardware & IoT Support?</span></h2>
+                    <p class="sec-desc">Partner with Inavon Global to access GPS tracking devices, telematics hardware, IoT sensors, gateways, accessories, and solution support for your business. Share your project requirement, and our team will help you identify the right technology, hardware, and deployment approach.</p>
                     <div class="feature-list" style="margin-top:24px;">
                         <div class="feature-item">
-                            <div class="fi-icon"><i class="fas fa-check"></i></div>
-                            <div class="fi-t"><h4>Free Consultation</h4><p>Expert guidance for your RTLS needs</p></div>
+                            <div class="fi-icon"><i class="fas fa-headset"></i></div>
+                            <div class="fi-t"><h4>Talk to Our Team</h4><p>Expert guidance for your project requirements</p></div>
                         </div>
                         <div class="feature-item">
-                            <div class="fi-icon"><i class="fas fa-check"></i></div>
-                            <div class="fi-t"><h4>Live Demo</h4><p>See the platform in action</p></div>
+                            <div class="fi-icon"><i class="fas fa-book"></i></div>
+                            <div class="fi-t"><h4>Request Product Catalogue</h4><p>Browse our full hardware & sensor portfolio</p></div>
                         </div>
                         <div class="feature-item">
-                            <div class="fi-icon"><i class="fas fa-check"></i></div>
-                            <div class="fi-t"><h4>Custom Solution</h4><p>Tailored to your industry requirements</p></div>
+                            <div class="fi-icon"><i class="fas fa-drafting-compass"></i></div>
+                            <div class="fi-t"><h4>Discuss Your Project</h4><p>Custom integration and deployment support</p></div>
                         </div>
                     </div>
                 </div>
-                <div class="cta-r anim">
+                <div class="cta-r anim-right delay-3">
                     <div class="cta-form">
-                        <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;color:var(--dark);">Request a Demo Now</h3>
+                        <h3 style="font-size:22px;font-weight:700;margin-bottom:24px;color:var(--dark);">Become a Partner</h3>
                         <form onsubmit="handleSubmit(event)">
                             <div class="form-row">
                                 <div class="form-group"><label>Name</label><input type="text" placeholder="Your full name" required></div>
@@ -392,26 +438,22 @@
                                 </div>
                             </div>
                             <div class="form-group"><label>Company *</label><input type="text" placeholder="Your company name" required></div>
-                            <div class="form-group"><label>How can we help?</label><textarea placeholder="Tell us about your requirements..."></textarea></div>
-                            <button type="submit" class="btn-p" style="width:100%;justify-content:center;">Submit <i class="fas fa-paper-plane"></i></button>
+                            <div class="form-group"><label>Project Requirement *</label><textarea placeholder="Tell us about your project, required hardware, or integration needs..." required></textarea></div>
+                            <button type="submit" class="btn-p" style="width:100%;justify-content:center;">Talk to Our Team <i class="fas fa-paper-plane"></i></button>
                         </form>
-                        <p id="formMsg" style="display:none;text-align:center;margin-top:16px;color:#16a34a;font-weight:600;font-size:14px;"><i class="fas fa-check-circle"></i> Thank you! We'll contact you shortly.</p>
+                        <p id="formMsg" style="display:none;text-align:center;margin-top:16px;color:#16a34a;font-weight:600;font-size:14px;"><i class="fas fa-check-circle"></i> Thank you! Our team will reach out shortly.</p>
                     </div>
                 </div>
             </div>
         </section>
     </div>
 
-    
-
-  
-
     <!-- ===== FOOTER (Global) ===== -->
     <footer class="footer">
         <div class="container">
             <div class="foot-brand">
                 <div class="logo-t" style="margin-bottom:12px;">INAVON <span>GLOBAL</span></div>
-                <p>Empowering business with next-generation Real-Time Locating Systems (RTLS). Safe, reliable, and cost-effective indoor positioning solutions.</p>
+                <p>Powering Tracking & IoT Businesses with Reliable Hardware and Connected Solutions.</p>
                 <div class="foot-social">
                     <a href="#"><i class="fab fa-facebook-f"></i></a>
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -429,10 +471,10 @@
             </div>
             <div class="foot-col">
                 <h4>Solutions</h4>
-                <a href="#" onclick="showPage('solutions')">Manufacturing</a>
-                <a href="#" onclick="showPage('solutions')">Healthcare</a>
-                <a href="#" onclick="showPage('solutions')">Logistics</a>
-                <a href="#" onclick="showPage('solutions')">Events</a>
+                <a href="#" onclick="showPage('solutions')">Fleet Management</a>
+                <a href="#" onclick="showPage('solutions')">Asset & Cold Chain</a>
+                <a href="#" onclick="showPage('solutions')">Fuel Monitoring</a>
+                <a href="#" onclick="showPage('solutions')">Smart City & IoT</a>
             </div>
             <div class="foot-col foot-contact">
                 <h4>Get in Touch</h4>
@@ -457,18 +499,13 @@
     <script>
         // ===== PAGE NAVIGATION =====
         function showPage(page) {
-            // Hide all pages
             document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-            // Show selected page
             document.getElementById('page-' + page).classList.add('active');
-            // Update nav active state
             document.querySelectorAll('.nav-links a[data-page], .mob-menu a[data-page]').forEach(a => {
                 a.classList.remove('active');
                 if (a.getAttribute('data-page') === page) a.classList.add('active');
             });
-            // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
-            // Re-trigger animations
             setTimeout(initAnimations, 100);
         }
 
@@ -502,10 +539,8 @@
 
         // ===== SHOP FILTER =====
         function filterShop(cat, btn) {
-            // Update active button
             document.querySelectorAll('.shop-filter').forEach(f => f.classList.remove('active'));
             btn.classList.add('active');
-            // Filter cards
             document.querySelectorAll('.shop-card').forEach(card => {
                 if (cat === 'all' || card.getAttribute('data-cat') === cat) {
                     card.style.display = 'block';
@@ -525,7 +560,7 @@
             }
         });
 
-        // ===== SCROLL ANIMATIONS =====
+        // ===== PREMIUM SCROLL ANIMATIONS =====
         function initAnimations() {
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
@@ -535,9 +570,13 @@
                 });
             }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-            document.querySelectorAll('.anim').forEach(el => {
-                el.classList.remove('visible');
-                observer.observe(el);
+            // Select all elements that need animation
+            const animElements = document.querySelectorAll('.anim, .anim-left, .anim-right, .anim-scale');
+            animElements.forEach(el => {
+                // Reset for re-triggering if needed, but primarily to observe
+                if (!el.classList.contains('visible')) {
+                    observer.observe(el);
+                }
             });
         }
 
@@ -548,8 +587,12 @@
             const currentScroll = window.scrollY;
             if (currentScroll > 100) {
                 navbar.style.boxShadow = '0 4px 30px rgba(0,0,0,0.08)';
+                navbar.style.background = 'rgba(255,255,255,0.95)';
+                navbar.style.backdropFilter = 'blur(10px)';
             } else {
                 navbar.style.boxShadow = '0 2px 20px rgba(0,0,0,0.04)';
+                navbar.style.background = '#fff';
+                navbar.style.backdropFilter = 'none';
             }
             lastScroll = currentScroll;
         });
