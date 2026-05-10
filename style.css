@@ -20,7 +20,85 @@ button { cursor: pointer; }
     --white: #ffffff;
     --tr: all 0.3s ease;
 }
+/* ========================================
+   🖼️ RESPONSIVE LOGO — BIG & CLEAR
+   ======================================== */
 
+/* --- Logo Link --- */
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    flex-shrink: 0;
+    z-index: 10;
+    min-width: 0;
+}
+
+/* --- Logo Image Base (DESKTOP) --- */
+.logo-img {
+    display: block;
+    height: auto;
+    width: auto;
+    max-height: 56px;        /* ✅ Badhaaya gaya hai (Pehle 44px tha) */
+    max-width: 240px;        /* ✅ Badhaaya gaya hai (Pehle 180px tha) */
+    object-fit: contain;
+    border-radius: 4px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover .logo-img {
+    transform: scale(1.03);
+}
+
+/* Hide old text logo */
+.logo-ic, .logo-t {
+    display: none !important;
+}
+
+
+/* ========================================
+   📱 RESPONSIVE BREAKPOINTS
+   ======================================== */
+
+/* --- Large Desktops (1440px+) --- */
+@media (min-width: 1440px) {
+    .logo-img {
+        max-height: 60px;
+        max-width: 260px;
+    }
+}
+
+/* --- Tablets Landscape (768px - 1023px) --- */
+@media (max-width: 1023px) and (min-width: 768px) {
+    .logo-img {
+        max-height: 50px;
+        max-width: 200px;
+    }
+}
+
+/* --- Mobile Phones (Below 768px) --- */
+@media (max-width: 767px) {
+    .logo-img {
+        max-height: 44px;    /* ✅ Mobile par bhi ab bada aur clear dikhega */
+        max-width: 180px;
+    }
+}
+
+/* --- Small Phones (Below 480px) --- */
+@media (max-width: 479px) {
+    .logo-img {
+        max-height: 38px;
+        max-width: 150px;
+    }
+}
+
+/* --- Tiny screens (below 360px) --- */
+@media (max-width: 359px) {
+    .logo-img {
+        max-height: 34px;
+        max-width: 130px;
+    }
+}
 /* ===== CONTAINER ===== */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .section { padding: 80px 0; }
