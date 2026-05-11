@@ -108,18 +108,20 @@
     </div>
 
    <!-- ===== NAVBAR ===== -->
-<!-- ===== NAVBAR ===== -->
-<!-- ===== NAVBAR ===== -->
+   <!-- ===== NAVBAR ===== -->
 <nav class="navbar">
     <div class="container">
+        <!-- Logo ko <a> tag se wrap kiya hai -->
         <a href="index.html" class="logo">
-            <img src="Artboard_13_copy_2_2x-100.jpg-removebg-preview.png" alt="Inavon Global" class="logo-img">
+            <div class="logo-ic">IG</div>
+            <div class="logo-t">INAVON <span>GLOBAL</span></div>
         </a>
         
         <div class="nav-links" id="navLinks">
             <a href="index.html" class="active">Home</a>
             <a href="products.html">Our Products</a>
             <a href="shop.html">Shop</a>
+            <!-- Agar contact alag page hai toh href="contact.html" likhein -->
             <a href="#contact" class="btn-p btn-sm nav-cta">Get a Quote</a>
         </div>
         
@@ -128,12 +130,14 @@
         </button>
     </div>
 </nav>
+
 <!-- ===== MOBILE MENU ===== -->
 <div class="mob-overlay" id="mobOverlay" onclick="toggleMenu()"></div>
 <div class="mob-menu" id="mobMenu">
     <div class="mob-close" onclick="toggleMenu()"><i class="fas fa-times"></i></div>
     
     <a href="index.html" onclick="toggleMenu()">Home</a>
+    <a href="solution.html" onclick="toggleMenu()">Solutions</a>
     <a href="products.html" onclick="toggleMenu()">Our Products</a>
     <a href="shop.html" onclick="toggleMenu()">Shop</a>
     <a href="#contact" onclick="toggleMenu()">Contact</a>

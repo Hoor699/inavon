@@ -1,0 +1,1466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Based 4CH 4G LTE MDVR - INAVON GLOBAL</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;background:#fff;color:#0f172a;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+        body.menu-open{overflow:hidden}
+        .container{max-width:1400px;margin:0 auto;padding:0 24px}
+        img{max-width:100%;display:block}
+        a{text-decoration:none}
+
+        /* ══════════════════════════════════════
+           TOP BAR
+        ══════════════════════════════════════ */
+        .top-bar{background:#0f172a;overflow:hidden;position:relative;height:36px}
+        .top-bar .container{display:flex;align-items:center;height:100%;position:relative}
+        .top-left-contact{display:flex;align-items:center;gap:16px;z-index:2;flex-shrink:0;padding-right:20px;background:#0f172a}
+        .top-left-contact span{color:#94a3b8;font-size:11px;display:flex;align-items:center;gap:5px;white-space:nowrap}
+        .top-left-contact span i{color:#3b82f6;font-size:10px}
+        .top-right-social{display:flex;align-items:center;gap:12px;z-index:2;flex-shrink:0;padding-left:20px;background:#0f172a}
+        .top-right-social a{color:#94a3b8;font-size:12px;transition:color .3s}
+        .top-right-social a:hover{color:#3b82f6}
+        .top-marquee{flex:1;overflow:hidden;position:relative}
+        .top-marquee::before,.top-marquee::after{content:'';position:absolute;top:0;bottom:0;width:40px;z-index:1}
+        .top-marquee::before{left:0;background:linear-gradient(90deg,#0f172a,transparent)}
+        .top-marquee::after{right:0;background:linear-gradient(-90deg,#0f172a,transparent)}
+        .marquee-track{display:flex;animation:marquee 30s linear infinite;white-space:nowrap}
+        .marquee-track span{color:#cbd5e1;font-size:12px;font-weight:500;padding:0 40px}
+        .marquee-track span i{color:#3b82f6;margin-right:6px}
+        @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+        /* ══════════════════════════════════════
+           HEADER
+        ══════════════════════════════════════ */
+        .shop-header{background:#fff;border-bottom:1px solid #e5e7eb;position:sticky;top:0;z-index:999}
+        .header-main{display:flex;align-items:center;justify-content:space-between;padding:12px 0;gap:16px}
+        .header-left{display:flex;align-items:center;gap:14px;flex-shrink:0}
+        .shop-logo{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+        .logo-mark{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:14px;font-weight:900}
+        .logo-name{font-size:20px;font-weight:900;color:#0f172a;letter-spacing:-0.02em}
+        .logo-name span{background:linear-gradient(135deg,#3b82f6,#1d4ed8);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+        .header-search{flex:1;max-width:550px;display:flex;align-items:center;border:2px solid #e5e7eb;border-radius:12px;overflow:hidden;transition:border-color .3s}
+        .header-search:focus-within{border-color:#3b82f6}
+        .header-search input{flex:1;padding:10px 16px;border:none;outline:none;font-size:14px;font-family:'Inter',sans-serif;color:#0f172a;background:transparent}
+        .header-search input::placeholder{color:#9ca3af}
+        .search-btn{padding:10px 18px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;cursor:pointer;font-size:14px;transition:opacity .3s;flex-shrink:0}
+        .search-btn:hover{opacity:.9}
+        .header-actions{display:flex;align-items:center;gap:18px;flex-shrink:0}
+        .header-act{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:#4b5563;font-size:10px;font-weight:500;cursor:pointer;position:relative;transition:color .3s;padding:4px 8px;border-radius:8px}
+        .header-act:hover{color:#1d4ed8;background:rgba(59,130,246,.05)}
+        .header-act i{font-size:18px}
+        .cart-count{position:absolute;top:-6px;right:-8px;background:#ef4444;color:#fff;font-size:9px;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:transform .3s}
+        .mobile-search-btn{display:none;background:none;border:none;font-size:20px;color:#0f172a;cursor:pointer;padding:6px}
+
+        /* ══════════════════════════════════════
+           HAMBURGER BUTTON
+        ══════════════════════════════════════ */
+        .hamburger-btn{display:none;flex-direction:column;justify-content:center;align-items:center;width:36px;height:36px;background:none;border:none;cursor:pointer;padding:4px;gap:5px;z-index:1001;flex-shrink:0}
+        .hamburger-btn span{display:block;width:22px;height:2px;background:#0f172a;border-radius:2px;transition:all .35s ease;transform-origin:center}
+        .hamburger-btn.active span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+        .hamburger-btn.active span:nth-child(2){opacity:0;transform:scaleX(0)}
+        .hamburger-btn.active span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+
+        /* ══════════════════════════════════════
+           MOBILE DRAWER
+        ══════════════════════════════════════ */
+        .mobile-overlay{position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:1000;opacity:0;visibility:hidden;transition:all .35s ease}
+        .mobile-overlay.active{opacity:1;visibility:visible}
+
+        .mobile-drawer{position:fixed;top:0;left:0;width:300px;max-width:85vw;height:100vh;height:100dvh;background:#fff;z-index:1001;transform:translateX(-100%);transition:transform .35s cubic-bezier(.4,0,.2,1);overflow-y:auto;overscroll-behavior:contain;display:flex;flex-direction:column}
+        .mobile-drawer.active{transform:translateX(0)}
+
+        .drawer-header{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid #e5e7eb;flex-shrink:0}
+        .drawer-logo{display:flex;align-items:center;gap:8px}
+        .drawer-logo .logo-mark{width:32px;height:32px;font-size:11px;border-radius:8px}
+        .drawer-logo .logo-name{font-size:15px}
+        .drawer-close{width:32px;height:32px;border:none;background:#f3f4f6;border-radius:8px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;color:#4b5563;transition:all .2s}
+        .drawer-close:hover{background:#e5e7eb;color:#0f172a}
+
+        .drawer-body{flex:1;overflow-y:auto;padding:0}
+
+        .drawer-section{padding:0}
+        .drawer-section-title{font-size:10px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.08em;padding:16px 20px 8px}
+
+        .drawer-link{display:flex;align-items:center;gap:12px;padding:12px 20px;color:#0f172a;font-size:14px;font-weight:500;transition:all .2s;border-left:3px solid transparent;cursor:pointer}
+        .drawer-link:hover{background:rgba(59,130,246,.05);border-left-color:#3b82f6;color:#1d4ed8}
+        .drawer-link i{width:20px;text-align:center;color:#3b82f6;font-size:14px;flex-shrink:0}
+        .drawer-link .drawer-arrow{margin-left:auto;font-size:10px;color:#9ca3af;transition:transform .2s}
+        .drawer-link:hover .drawer-arrow{transform:translateX(2px);color:#3b82f6}
+
+        .drawer-divider{height:1px;background:#f1f5f9;margin:4px 20px}
+
+        .drawer-account{display:flex;align-items:center;gap:12px;padding:14px 20px;background:linear-gradient(135deg,rgba(59,130,246,.05),rgba(29,78,216,.02));border-bottom:1px solid #e5e7eb;cursor:pointer;transition:background .2s}
+        .drawer-account:hover{background:rgba(59,130,246,.08)}
+        .drawer-account-icon{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#3b82f6,#1d4ed8);display:flex;align-items:center;justify-content:center;color:#fff;font-size:16px}
+        .drawer-account-info{flex:1}
+        .drawer-account-info strong{font-size:14px;color:#0f172a;display:block}
+        .drawer-account-info span{font-size:11px;color:#6b7280}
+
+        .drawer-footer{padding:16px 20px;border-top:1px solid #e5e7eb;flex-shrink:0}
+        .drawer-social{display:flex;gap:8px;justify-content:center}
+        .drawer-social a{width:36px;height:36px;border-radius:8px;background:rgba(59,130,246,.08);display:flex;align-items:center;justify-content:center;color:#3b82f6;font-size:14px;transition:all .2s}
+        .drawer-social a:hover{background:rgba(59,130,246,.15);transform:translateY(-1px)}
+
+        /* ══════════════════════════════════════
+           SEARCH OVERLAY
+        ══════════════════════════════════════ */
+        .search-overlay{position:fixed;inset:0;background:rgba(2,6,23,.92);backdrop-filter:blur(20px);z-index:10000;display:flex;align-items:flex-start;justify-content:center;padding-top:15vh;opacity:0;visibility:hidden;transition:all .4s}
+        .search-overlay.active{opacity:1;visibility:visible}
+        .search-overlay-inner{width:100%;max-width:700px;padding:0 24px}
+        .search-overlay-close{display:flex;justify-content:flex-end;margin-bottom:24px}
+        .search-overlay-close button{background:none;border:none;color:#fff;font-size:28px;cursor:pointer;transition:transform .3s}
+        .search-overlay-close button:hover{transform:rotate(90deg)}
+        .search-overlay-input{display:flex;border-bottom:3px solid rgba(59,130,246,.5);padding-bottom:12px}
+        .search-overlay-input input{flex:1;background:transparent;border:none;outline:none;font-size:32px;font-weight:300;color:#fff;font-family:'Inter',sans-serif}
+        .search-overlay-input input::placeholder{color:#6b7280}
+        .search-overlay-input button{background:none;border:none;color:#3b82f6;font-size:28px;cursor:pointer}
+        .search-overlay-tags{margin-top:32px}
+        .search-overlay-tags p{font-size:13px;color:#6b7280;margin-bottom:12px}
+        .search-overlay-tags .tags-wrap{display:flex;flex-wrap:wrap;gap:8px}
+        .search-overlay-tags .tag{padding:8px 16px;border-radius:100px;border:1px solid rgba(59,130,246,.3);color:#60a5fa;font-size:13px;text-decoration:none;transition:all .3s;cursor:pointer}
+        .search-overlay-tags .tag:hover{background:rgba(59,130,246,.15);border-color:#3b82f6}
+
+        /* ══════════════════════════════════════
+           MOBILE CATEGORY BAR (sticky below header)
+        ══════════════════════════════════════ */
+        .mobile-cat-bar{display:none;background:#0f172a;position:sticky;top:60px;z-index:998;border-bottom:1px solid rgba(59,130,246,.2)}
+        .mobile-cat-bar .container{display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;padding:0 16px}
+        .mobile-cat-bar .container::-webkit-scrollbar{display:none}
+        .mobile-cat-bar .cat-link{padding:10px 14px;font-size:11px}
+
+        /* ══════════════════════════════════════
+           CATEGORY NAV
+        ══════════════════════════════════════ */
+        .cat-nav{background:#0f172a}
+        .cat-nav .container{display:flex;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+        .cat-nav .container::-webkit-scrollbar{display:none}
+        .cat-link{display:flex;align-items:center;gap:8px;padding:13px 20px;color:#94a3b8;text-decoration:none;font-size:12px;font-weight:600;white-space:nowrap;border-bottom:2px solid transparent;transition:all .3s}
+        .cat-link i{color:#3b82f6;font-size:13px}
+        .cat-link:hover,.cat-link.active{color:#fff;background:rgba(59,130,246,.1);border-bottom-color:#3b82f6}
+
+        /* ══════════════════════════════════════
+           BREADCRUMB
+        ══════════════════════════════════════ */
+        .pd-breadcrumb{display:flex;align-items:center;gap:6px;padding:16px 0;font-size:12px;color:#6b7280;flex-wrap:wrap}
+        .pd-breadcrumb a{color:#1d4ed8;text-decoration:none;transition:color .3s}
+        .pd-breadcrumb a:hover{color:#3b82f6}
+        .pd-breadcrumb i{font-size:8px;color:#9ca3af}
+
+        /* ══════════════════════════════════════
+           MAIN PRODUCT GRID
+        ══════════════════════════════════════ */
+        .pd-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:40px;margin-bottom:48px;align-items:start}
+
+        /* ══════════════════════════════════════
+           IMAGE CAROUSEL
+        ══════════════════════════════════════ */
+        .pd-gallery{position:sticky;top:90px}
+        .carousel-wrapper{position:relative;width:100%;border-radius:16px;overflow:hidden;background:#f8fafc;border:1px solid #e5e7eb;margin-bottom:12px;user-select:none;-webkit-user-select:none}
+        .carousel-track{display:flex;transition:transform .45s cubic-bezier(.4,0,.2,1);will-change:transform}
+        .carousel-slide{min-width:100%;aspect-ratio:1/1;overflow:hidden;position:relative}
+        .carousel-slide img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+        .carousel-slide:hover img{transform:scale(1.05)}
+        .carousel-slide .zoom-hint{position:absolute;bottom:12px;right:12px;background:rgba(0,0,0,.5);color:#fff;font-size:10px;padding:4px 10px;border-radius:6px;opacity:0;transition:opacity .3s;pointer-events:none;display:flex;align-items:center;gap:4px}
+        .carousel-slide:hover .zoom-hint{opacity:1}
+
+        .carousel-arrow{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.92);border:1px solid #e5e7eb;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:all .25s;box-shadow:0 2px 12px rgba(0,0,0,.08);color:#0f172a;font-size:14px}
+        .carousel-arrow:hover{background:#fff;box-shadow:0 4px 20px rgba(0,0,0,.12);transform:translateY(-50%) scale(1.05)}
+        .carousel-arrow.prev{left:12px}
+        .carousel-arrow.next{right:12px}
+        .carousel-arrow:active{transform:translateY(-50%) scale(.95)}
+
+        .carousel-dots{display:flex;justify-content:center;gap:8px;padding:12px 0 4px}
+        .carousel-dot{width:8px;height:8px;border-radius:50%;background:#d1d5db;border:none;cursor:pointer;transition:all .3s;padding:0}
+        .carousel-dot.active{background:#3b82f6;width:24px;border-radius:4px}
+        .carousel-dot:hover{background:#93c5fd}
+
+        .carousel-badge{position:absolute;top:14px;left:14px;background:#ef4444;color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:6px;z-index:5;letter-spacing:.03em}
+
+        .pd-thumbs{display:flex;gap:10px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px}
+        .pd-thumbs::-webkit-scrollbar{display:none}
+        .pd-thumb{width:72px;height:72px;min-width:72px;border-radius:10px;overflow:hidden;cursor:pointer;border:2px solid transparent;transition:all .3s;background:#f8fafc;position:relative}
+        .pd-thumb.active,.pd-thumb:hover{border-color:#3b82f6}
+        .pd-thumb.active::after{content:'';position:absolute;inset:0;background:rgba(59,130,246,.12);pointer-events:none}
+        .pd-thumb img{width:100%;height:100%;object-fit:cover}
+
+        /* Info */
+        .pd-sale-badge{display:inline-block;background:#ef4444;color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:5px;margin-bottom:10px;letter-spacing:.03em}
+        .pd-title{font-size:24px;font-weight:800;color:#0f172a;line-height:1.35;margin-bottom:14px}
+
+        .social-proof-bar{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:18px;padding-bottom:16px;border-bottom:1px solid #f1f5f9}
+        .sp-trust{display:flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:#0f172a}
+        .sp-trust i{color:#f59e0b;font-size:12px}
+        .sp-avatars{display:flex;align-items:center}
+        .sp-avatars img{width:24px;height:24px;border-radius:50%;border:2px solid #fff;margin-left:-6px;object-fit:cover}
+        .sp-avatars img:first-child{margin-left:0}
+        .sp-text{font-size:12px;color:#4b5563}
+        .sp-text strong{color:#0f172a}
+        .sp-verified{color:#10b981;font-size:10px}
+        .sp-love{display:flex;align-items:center;gap:4px;font-size:12px;color:#4b5563}
+        .sp-love i{color:#ef4444;font-size:11px}
+        .sp-sold{font-size:11px;color:#6b7280;background:#f3f4f6;padding:3px 8px;border-radius:5px}
+
+        .pd-price-box{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding:14px 16px;background:linear-gradient(135deg,rgba(59,130,246,.05),rgba(29,78,216,.02));border-radius:12px;border:1px solid rgba(59,130,246,.1);flex-wrap:wrap}
+        .pd-old-price{font-size:16px;color:#9ca3af;text-decoration:line-through}
+        .pd-new-price{font-size:28px;font-weight:800;color:#1d4ed8}
+        .pd-discount-tag{background:#fef2f2;color:#ef4444;font-size:11px;font-weight:700;padding:3px 8px;border-radius:5px}
+
+        .pd-qty-cart{display:flex;align-items:center;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+        .pd-qty-label{font-size:14px;font-weight:600;color:#374151}
+        .pd-qty{display:flex;align-items:center;border:2px solid #e5e7eb;border-radius:10px;overflow:hidden}
+        .pd-qty button{width:40px;height:40px;background:#f9fafb;border:none;font-size:16px;cursor:pointer;color:#0f172a;transition:background .2s;display:flex;align-items:center;justify-content:center}
+        .pd-qty button:hover{background:#e5e7eb}
+        .pd-qty input{width:44px;height:40px;border:none;border-left:1px solid #e5e7eb;border-right:1px solid #e5e7eb;text-align:center;font-size:14px;font-weight:600;font-family:'Inter',sans-serif;outline:none;-moz-appearance:textfield}
+        .pd-qty input::-webkit-outer-spin-button,.pd-qty input::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+        .pd-subtotal{font-size:14px;color:#4b5563}
+        .pd-subtotal strong{color:#0f172a;font-size:20px}
+
+        .pd-action-btns{display:flex;gap:10px;margin-bottom:14px}
+        .pd-add-cart{flex:2;padding:14px 20px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:8px;font-family:'Inter',sans-serif}
+        .pd-add-cart:hover{box-shadow:0 0 30px rgba(59,130,246,.4);transform:translateY(-1px)}
+        .pd-add-cart:active{transform:translateY(0)}
+        .pd-buy-now{flex:1;padding:14px 16px;background:#0f172a;color:#fff;border:none;border-radius:12px;font-size:14px;font-weight:700;cursor:pointer;transition:all .3s;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Inter',sans-serif}
+        .pd-buy-now:hover{background:#1e293b;transform:translateY(-1px)}
+        .pd-buy-now:active{transform:translateY(0)}
+
+        .pd-secondary-actions{display:flex;gap:10px;margin-bottom:20px}
+        .pd-wish-btn,.pd-share-btn{display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:#4b5563;background:none;border:1px solid #e5e7eb;padding:8px 14px;border-radius:8px;cursor:pointer;transition:all .3s;position:relative;font-family:'Inter',sans-serif}
+        .pd-wish-btn:hover{color:#ef4444;border-color:#ef4444}
+        .pd-wish-btn.wishlisted{color:#ef4444;border-color:#ef4444}
+        .pd-share-btn:hover{color:#3b82f6;border-color:#3b82f6}
+
+        .share-popup{position:absolute;bottom:48px;left:50%;transform:translateX(-50%);width:260px;background:#fff;border:1px solid #e5e7eb;border-radius:10px;padding:14px;box-shadow:0 10px 40px rgba(0,0,0,.12);display:none;z-index:10}
+        .share-popup.show{display:block;animation:fadeUp .2s ease}
+        @keyframes fadeUp{from{opacity:0;transform:translateX(-50%) translateY(6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+        .share-popup::after{content:'';position:absolute;bottom:-6px;left:50%;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:#fff;border-right:1px solid #e5e7eb;border-bottom:1px solid #e5e7eb}
+        .share-popup h4{font-size:12px;font-weight:700;margin-bottom:6px;color:#0f172a}
+        .share-link-box{display:flex;border:1px solid #e5e7eb;border-radius:6px;overflow:hidden}
+        .share-link-box input{flex:1;padding:6px 8px;font-size:10px;border:none;outline:none;color:#6b7280;min-width:0}
+        .share-link-box button{padding:6px 10px;background:#3b82f6;color:#fff;border:none;font-size:10px;cursor:pointer;white-space:nowrap;font-family:'Inter',sans-serif}
+
+        .pd-live-viewers{display:flex;align-items:center;gap:6px;font-size:12px;color:#6b7280;margin-bottom:20px;padding:8px 12px;background:#fefce8;border-radius:8px;border:1px solid #fef08a;width:fit-content}
+        .live-dot{width:7px;height:7px;background:#ef4444;border-radius:50%;animation:pulse 1.5s infinite;flex-shrink:0}
+        @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(239,68,68,.7)}70%{box-shadow:0 0 0 6px rgba(239,68,68,0)}100%{box-shadow:0 0 0 0 rgba(239,68,68,0)}}
+
+        .pd-trust-badges{display:grid;grid-template-columns:1fr;gap:10px}
+        .pd-badge-item{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:#4b5563;padding:12px;background:#f8fafc;border-radius:10px;border:1px solid #f1f5f9}
+        .pd-badge-item i{color:#10b981;font-size:16px;margin-top:1px;flex-shrink:0}
+        .pd-badge-item strong{color:#0f172a;font-size:13px}
+        .pd-badge-item small{display:block;font-size:11px;color:#6b7280;margin-top:2px}
+
+        /* ══════════════════════════════════════
+           TABS
+        ══════════════════════════════════════ */
+        .pd-tabs-sec{margin-bottom:48px}
+        .pd-tabs-nav{display:flex;border-bottom:2px solid #e5e7eb;margin-bottom:28px;overflow-x:auto;scrollbar-width:none}
+        .pd-tabs-nav::-webkit-scrollbar{display:none}
+        .pd-tab-btn{padding:12px 24px;font-size:14px;font-weight:600;color:#6b7280;background:none;border:none;cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-2px;transition:all .3s;white-space:nowrap;font-family:'Inter',sans-serif}
+        .pd-tab-btn.active{color:#1d4ed8;border-bottom-color:#3b82f6}
+        .pd-tab-btn:hover{color:#1d4ed8}
+        .pd-tab-content{display:none}
+        .pd-tab-content.active{display:block;animation:fadeIn .3s}
+        @keyframes fadeIn{from{opacity:0}to{opacity:1}}
+
+        .features-list{list-style:none}
+        .features-list li{font-size:13px;color:#4b5563;line-height:1.7;margin-bottom:10px;padding-left:18px;position:relative}
+        .features-list li::before{content:'◆';position:absolute;left:0;color:#3b82f6;font-size:9px;top:5px}
+        .features-list li strong{color:#0f172a}
+
+        .spec-table-wrap{overflow-x:auto;border-radius:12px;border:1px solid #e5e7eb;margin-bottom:28px;-webkit-overflow-scrolling:touch}
+        .spec-table{width:100%;border-collapse:collapse;font-size:13px;min-width:480px}
+        .spec-table th{background:#0f172a;color:#fff;padding:12px 16px;text-align:left;font-weight:600;font-size:12px;text-transform:uppercase;letter-spacing:.03em}
+        .spec-table td{padding:10px 16px;border-bottom:1px solid #f3f4f6}
+        .spec-table tr:last-child td{border-bottom:none}
+        .spec-table tr:nth-child(even){background:#f9fafb}
+        .spec-table tr:hover td{background:rgba(59,130,246,.03)}
+        .spec-table .spec-cat td{font-weight:700;color:#1d4ed8;background:rgba(59,130,246,.05);font-size:13px}
+
+        /* ══════════════════════════════════════
+           PRODUCT CARDS GRID
+        ══════════════════════════════════════ */
+        .pd-related-sec,.pd-recent-sec{margin-bottom:48px}
+        .pd-sec-title{font-size:20px;font-weight:800;color:#0f172a;margin-bottom:20px;padding-bottom:10px;border-bottom:2px solid #e5e7eb}
+        .products-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        .product-card{background:#fff;border-radius:14px;overflow:hidden;border:1px solid #e5e7eb;transition:all .4s;position:relative;cursor:pointer}
+        .product-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,.07);border-color:rgba(59,130,246,.15)}
+        .pc-badge{position:absolute;top:10px;left:10px;z-index:2;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;text-transform:uppercase}
+        .pc-badge.sale{background:#ef4444;color:#fff}
+        .pc-img{width:100%;aspect-ratio:1;overflow:hidden;background:#f8fafc}
+        .pc-img img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+        .product-card:hover .pc-img img{transform:scale(1.05)}
+        .pc-body{padding:14px}
+        .pc-body h4{font-size:12px;font-weight:600;color:#0f172a;line-height:1.4;margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;min-height:34px}
+        .pc-price{display:flex;align-items:center;gap:6px;margin-bottom:10px}
+        .pc-old{font-size:12px;color:#9ca3af;text-decoration:line-through}
+        .pc-new{font-size:15px;font-weight:700;color:#1d4ed8}
+        .pc-btn{display:block;width:100%;text-align:center;padding:9px;border-radius:8px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-size:12px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .3s;font-family:'Inter',sans-serif}
+        .pc-btn:hover{box-shadow:0 0 20px rgba(59,130,246,.3)}
+
+        /* ══════════════════════════════════════
+           NEWSLETTER
+        ══════════════════════════════════════ */
+        .newsletter-sec{background:linear-gradient(135deg,#0f172a,#020617);padding:56px 0;text-align:center}
+        .newsletter-inner{max-width:560px;margin:0 auto}
+        .newsletter-sec h2{font-size:26px;font-weight:800;color:#fff;margin-bottom:8px}
+        .newsletter-sec p{color:#94a3b8;margin-bottom:24px;font-size:14px;line-height:1.6}
+        .newsletter-form{display:flex;gap:12px;max-width:500px;margin:0 auto}
+        .newsletter-form input{flex:1;padding:14px 20px;border-radius:12px;border:1px solid rgba(59,130,246,.3);background:rgba(255,255,255,.05);color:#fff;font-size:14px;outline:none;transition:border-color .3s;font-family:'Inter',sans-serif}
+        .newsletter-form input:focus{border-color:#3b82f6}
+        .newsletter-form input::placeholder{color:#9ca3af}
+        .newsletter-form button{padding:14px 28px;border-radius:12px;background:linear-gradient(135deg,#3b82f6,#1d4ed8);color:#fff;font-size:13px;font-weight:700;border:none;cursor:pointer;white-space:nowrap;transition:all .3s;font-family:'Inter',sans-serif}
+        .newsletter-form button:hover{transform:translateY(-2px);box-shadow:0 0 30px rgba(59,130,246,.4)}
+
+        /* ══════════════════════════════════════
+           FOOTER
+        ══════════════════════════════════════ */
+        .shop-footer{background:#0f172a;padding:56px 0 0;color:#94a3b8}
+        .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+        .footer-brand .shop-logo{margin-bottom:14px}
+        .footer-brand .logo-name{color:#fff}
+        .footer-brand p{font-size:13px;line-height:1.6;color:#64748b;margin-bottom:18px}
+        .footer-social{display:flex;gap:8px}
+        .footer-social a{width:36px;height:36px;border-radius:8px;background:rgba(59,130,246,.1);border:1px solid rgba(59,130,246,.15);display:flex;align-items:center;justify-content:center;color:#60a5fa;font-size:13px;text-decoration:none;transition:all .3s}
+        .footer-social a:hover{background:rgba(59,130,246,.2);transform:translateY(-2px)}
+        .footer-col h4{font-size:13px;font-weight:700;color:#fff;margin-bottom:16px;text-transform:uppercase;letter-spacing:.05em}
+        .footer-col a{display:block;font-size:13px;color:#64748b;text-decoration:none;padding:4px 0;transition:color .3s}
+        .footer-col a:hover{color:#60a5fa}
+        .footer-bottom{border-top:1px solid rgba(59,130,246,.1);padding:20px 0;display:flex;align-items:center;justify-content:space-between;margin-top:28px;flex-wrap:wrap;gap:12px}
+        .footer-bottom p{font-size:12px;color:#475569}
+        .footer-payments{display:flex;gap:10px;flex-wrap:wrap}
+        .footer-payments i{font-size:24px;color:#475569}
+
+        /* ══════════════════════════════════════
+           MOBILE BOTTOM NAVIGATION BAR
+        ══════════════════════════════════════ */
+        .mob-bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:997;background:#fff;border-top:1px solid #e5e7eb;box-shadow:0 -4px 20px rgba(0,0,0,.08);padding:6px 0 env(safe-area-inset-bottom,6px)}
+        .mob-bottom-nav-inner{display:flex;align-items:center;justify-content:space-around}
+        .mob-bnav-item{display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;color:#6b7280;font-size:10px;font-weight:600;padding:6px 12px;border-radius:12px;transition:all .3s;position:relative}
+        .mob-bnav-item i{font-size:20px;transition:all .3s}
+        .mob-bnav-item.active,.mob-bnav-item:hover{color:#1d4ed8}
+        .mob-bnav-item.active i{transform:scale(1.1)}
+        .mob-bnav-cart-badge{position:absolute;top:0;right:4px;background:#ef4444;color:#fff;font-size:9px;font-weight:700;width:16px;height:16px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+
+        /* ══════════════════════════════════════
+           TOAST
+        ══════════════════════════════════════ */
+        .toast{position:fixed;bottom:24px;right:24px;background:#0f172a;color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;box-shadow:0 10px 40px rgba(0,0,0,.2);transform:translateY(100px);opacity:0;transition:all .4s;z-index:9999}
+        .toast.show{transform:translateY(0);opacity:1}
+        .toast i{color:#10b981;font-size:16px}
+
+        /* ══════════════════════════════════════
+           RESPONSIVE — TABLET
+        ══════════════════════════════════════ */
+        @media(max-width:1100px){
+            .pd-grid{grid-template-columns:1fr 1.2fr;gap:28px}
+            .products-grid{grid-template-columns:repeat(2,1fr);gap:16px}
+            .footer-grid{grid-template-columns:repeat(2,1fr);gap:32px}
+        }
+
+        /* ══════════════════════════════════════
+           RESPONSIVE — MOBILE
+        ══════════════════════════════════════ */
+        @media(max-width:768px){
+            .container{padding:0 16px}
+
+            /* Top bar hidden on mobile */
+            .top-bar{display:none}
+
+            /* Show hamburger, hide desktop search */
+            .hamburger-btn{display:flex}
+            .header-search{display:none}
+            .header-act.mob-hide{display:none}
+            .header-main{padding:10px 0}
+
+            /* Show Mobile Bottom Nav */
+            .mob-bottom-nav{display:block}
+            body{padding-bottom:72px}
+
+            .logo-mark{width:38px;height:38px;font-size:12px;border-radius:10px}
+            .logo-name{font-size:16px}
+            .header-actions{gap:14px}
+            .header-act{font-size:9px}
+            .header-act i{font-size:16px}
+
+            /* Desktop cat nav hidden — mobile cat bar shown */
+            .cat-nav{display:none}
+            .mobile-cat-bar{display:block}
+
+            /* Product Grid Stacks */
+            .pd-grid{grid-template-columns:1fr;gap:20px;margin-bottom:32px}
+            .pd-gallery{position:relative;top:0}
+            .carousel-wrapper{border-radius:12px}
+
+            .carousel-arrow{width:32px;height:32px;font-size:12px}
+            .carousel-arrow.prev{left:8px}
+            .carousel-arrow.next{right:8px}
+            .carousel-badge{top:10px;left:10px;font-size:10px;padding:3px 9px}
+
+            .pd-thumb{width:60px;height:60px;min-width:60px;border-radius:8px}
+
+            .pd-title{font-size:18px;margin-bottom:12px}
+            .pd-price-box{padding:12px}
+            .pd-new-price{font-size:24px}
+
+            .social-proof-bar{gap:8px;padding-bottom:12px;margin-bottom:14px}
+            .sp-trust{font-size:12px}
+            .sp-text{font-size:11px}
+
+            .pd-action-btns{flex-direction:column;gap:8px}
+            .pd-add-cart,.pd-buy-now{flex:auto;padding:14px}
+            .pd-secondary-actions{gap:8px}
+            .pd-wish-btn,.pd-share-btn{flex:1;justify-content:center;padding:10px}
+
+            .pd-qty-cart{gap:12px}
+            .pd-qty button{width:36px;height:36px;font-size:14px}
+            .pd-qty input{width:40px;height:36px;font-size:13px}
+
+            .pd-trust-badges{gap:8px}
+            .pd-badge-item{padding:10px;font-size:12px}
+            .pd-badge-item i{font-size:14px}
+            .pd-badge-item strong{font-size:12px}
+            .pd-badge-item small{font-size:10px}
+
+            .pd-tabs-sec{margin-bottom:32px}
+            .pd-tab-btn{padding:10px 16px;font-size:13px}
+            .spec-table{min-width:380px;font-size:12px}
+            .spec-table th,.spec-table td{padding:8px 12px}
+
+            .products-grid{grid-template-columns:repeat(2,1fr);gap:12px}
+            .product-card{border-radius:10px}
+            .pc-body{padding:10px}
+            .pc-body h4{font-size:11px;min-height:30px;margin-bottom:6px}
+            .pc-new{font-size:14px}
+            .pc-old{font-size:11px}
+            .pc-btn{padding:8px;font-size:11px;border-radius:6px}
+            .pc-badge{font-size:9px;padding:2px 8px;top:8px;left:8px}
+            .pd-sec-title{font-size:17px;margin-bottom:14px}
+
+            .newsletter-sec{padding:36px 0}
+            .newsletter-sec h2{font-size:20px}
+            .newsletter-sec p{font-size:13px;margin-bottom:18px}
+            .newsletter-form{flex-direction:column;gap:10px;border-radius:12px}
+            .newsletter-form input{padding:12px 16px}
+            .newsletter-form button{padding:12px 20px}
+
+            .shop-footer{padding:40px 0 0}
+            .footer-grid{grid-template-columns:1fr 1fr;gap:24px}
+            .footer-col h4{font-size:12px;margin-bottom:12px}
+            .footer-col a{font-size:12px}
+            .footer-bottom{justify-content:center;text-align:center;flex-direction:column}
+
+            /* Search overlay mobile */
+            .search-overlay-input input{font-size:22px}
+            .search-overlay{padding-top:10vh}
+        }
+
+        @media(max-width:420px){
+            .container{padding:0 12px}
+            .pd-title{font-size:16px}
+            .pd-new-price{font-size:22px}
+            .pd-old-price{font-size:14px}
+            .social-proof-bar{gap:6px}
+            .sp-sold{display:none}
+            .pd-qty-cart{flex-direction:column;align-items:flex-start;gap:8px}
+            .pd-price-box{flex-direction:column;align-items:flex-start;gap:6px}
+            .pd-live-viewers{font-size:11px;padding:6px 10px}
+            .products-grid{grid-template-columns:1fr 1fr;gap:10px}
+            .pc-body h4{font-size:10px;-webkit-line-clamp:2}
+            .pc-new{font-size:13px}
+            .pc-btn{font-size:10px;padding:7px}
+            .footer-grid{grid-template-columns:1fr;gap:20px}
+            .newsletter-sec h2{font-size:18px}
+            .spec-table{min-width:320px}
+            .carousel-arrow{width:28px;height:28px;font-size:11px}
+            .mob-bnav-item{padding:6px 8px;font-size:9px}
+            .mob-bnav-item i{font-size:18px}
+        }
+    </style>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast"><i class="fas fa-check-circle"></i><span id="toastMsg">Added to cart!</span></div>
+
+<!-- ══════════════════════════════════════
+     MOBILE OVERLAY
+══════════════════════════════════════ -->
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeDrawer()"></div>
+
+<!-- ══════════════════════════════════════
+     MOBILE DRAWER
+══════════════════════════════════════ -->
+<nav class="mobile-drawer" id="mobileDrawer">
+    <div class="drawer-header">
+        <div class="drawer-logo">
+            <div class="logo-mark">IG</div>
+            <div class="logo-name">INAVON <span>GLOBAL</span></div>
+        </div>
+        <button class="drawer-close" onclick="closeDrawer()"><i class="fas fa-times"></i></button>
+    </div>
+
+    <div class="drawer-body">
+        <div class="drawer-account" onclick="closeDrawer()">
+            <div class="drawer-account-icon"><i class="far fa-user"></i></div>
+            <div class="drawer-account-info">
+                <strong>Sign In / Register</strong>
+                <span>Access your account & orders</span>
+            </div>
+        </div>
+
+        <div class="drawer-section">
+            <div class="drawer-section-title">Shop Categories</div>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-video"></i> Dashcam & MDVR
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-microchip"></i> Sensors
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-map-marker-alt"></i> GPS Tracker
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-plug"></i> Accessories
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-wifi"></i> RFID & UHF Readers
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-network-wired"></i> Routers & Switches
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-bolt"></i> EV Charger
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-tag"></i> RFID Tags
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-building"></i> Brands
+                <i class="fas fa-chevron-right drawer-arrow"></i>
+            </a>
+        </div>
+
+        <div class="drawer-divider"></div>
+
+        <div class="drawer-section">
+            <div class="drawer-section-title">Quick Links</div>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-home"></i> Home
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-th-large"></i> All Products
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="far fa-heart"></i> Wishlist
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-shopping-cart"></i> Cart
+            </a>
+        </div>
+
+        <div class="drawer-divider"></div>
+
+        <div class="drawer-section">
+            <div class="drawer-section-title">Help & Info</div>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-info-circle"></i> About Us
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-headset"></i> Contact Us
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-truck"></i> Track Order
+            </a>
+            <a href="#" class="drawer-link" onclick="closeDrawer()">
+                <i class="fas fa-undo"></i> Returns & Refunds
+            </a>
+        </div>
+    </div>
+
+    <div class="drawer-footer">
+        <div class="drawer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </div>
+</nav>
+
+<!-- ══════════════════════════════════════
+     SEARCH OVERLAY
+══════════════════════════════════════ -->
+<div class="search-overlay" id="searchOverlay">
+    <div class="search-overlay-inner">
+        <div class="search-overlay-close">
+            <button onclick="closeSearchOverlay()" aria-label="Close search"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="search-overlay-input">
+            <input type="text" placeholder="Search for products..." id="overlaySearchInput" aria-label="Search products">
+            <button aria-label="Search"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="search-overlay-tags">
+            <p>Popular Searches:</p>
+            <div class="tags-wrap">
+                <a class="tag" href="#">Dashcam</a>
+                <a class="tag" href="#">MDVR 4CH</a>
+                <a class="tag" href="#">GPS Tracker</a>
+                <a class="tag" href="#">EV Charger</a>
+                <a class="tag" href="#">AZDOME</a>
+                <a class="tag" href="#">JIMI</a>
+                <a class="tag" href="#">Hardwire Kit</a>
+                <a class="tag" href="#">Night Vision</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+    <div class="container">
+        <div class="top-left-contact">
+            <span><i class="fas fa-phone-alt"></i> +966 50 000 0000</span>
+            <span><i class="fas fa-envelope"></i> info@inavonglobal.com</span>
+        </div>
+        <div class="top-marquee">
+            <div class="marquee-track">
+                <span><i class="fas fa-truck"></i> Free Shipping on All Orders</span>
+                <span><i class="fas fa-tag"></i> Up to 40% Off — New Arrivals</span>
+                <span><i class="fas fa-shield-alt"></i> Secure Payments & 30-Day Returns</span>
+                <span><i class="fas fa-headset"></i> 24/7 Customer Support</span>
+                <span><i class="fas fa-truck"></i> Free Shipping on All Orders</span>
+                <span><i class="fas fa-tag"></i> Up to 40% Off — New Arrivals</span>
+                <span><i class="fas fa-shield-alt"></i> Secure Payments & 30-Day Returns</span>
+                <span><i class="fas fa-headset"></i> 24/7 Customer Support</span>
+            </div>
+        </div>
+        <div class="top-right-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+</div>
+
+<!-- HEADER -->
+<header class="shop-header">
+    <div class="container">
+        <div class="header-main">
+            <div class="header-left">
+                <button class="hamburger-btn" id="hamburgerBtn" onclick="toggleDrawer()" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+                <a href="index.html" class="shop-logo">
+                    <div class="logo-mark">IG</div>
+                    <div class="logo-name">INAVON <span>GLOBAL</span></div>
+                </a>
+            </div>
+            <div class="header-search">
+                <input type="text" placeholder="Search entire store here..." id="searchInput" aria-label="Search products" onfocus="openSearchOverlay()">
+                <button class="search-btn" aria-label="Search" onclick="openSearchOverlay()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-actions">
+                <a href="#" class="header-act mob-hide" title="Wishlist"><i class="far fa-heart"></i><span>Wishlist</span></a>
+                <a href="#" class="header-act" id="cartBtn" title="Cart">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count" id="cartCount">0</span>
+                    <span>Cart</span>
+                </a>
+                <a href="#" class="header-act mob-hide" title="Sign In"><i class="far fa-user"></i><span>Sign In</span></a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- CATEGORY NAV (desktop) -->
+<nav class="cat-nav">
+    <div class="container">
+        <a href="#" class="cat-link active"><i class="fas fa-video"></i> DASHCAM & MDVR</a>
+        <a href="#" class="cat-link"><i class="fas fa-microchip"></i> SENSORS</a>
+        <a href="#" class="cat-link"><i class="fas fa-map-marker-alt"></i> GPS TRACKER</a>
+        <a href="#" class="cat-link"><i class="fas fa-plug"></i> ACCESSORIES</a>
+        <a href="#" class="cat-link"><i class="fas fa-wifi"></i> RFID & UHF READERS</a>
+        <a href="#" class="cat-link"><i class="fas fa-network-wired"></i> ROUTERS & SWITCHES</a>
+        <a href="#" class="cat-link"><i class="fas fa-bolt"></i> EV CHARGER</a>
+        <a href="#" class="cat-link"><i class="fas fa-tag"></i> RFID TAGS</a>
+        <a href="#" class="cat-link"><i class="fas fa-building"></i> BRANDS</a>
+    </div>
+</nav>
+
+<!-- MOBILE CATEGORY BAR (sticky below header) -->
+<nav class="mobile-cat-bar">
+    <div class="container">
+        <a href="#" class="cat-link active"><i class="fas fa-video"></i> DASHCAM & MDVR</a>
+        <a href="#" class="cat-link"><i class="fas fa-microchip"></i> SENSORS</a>
+        <a href="#" class="cat-link"><i class="fas fa-map-marker-alt"></i> GPS TRACKER</a>
+        <a href="#" class="cat-link"><i class="fas fa-plug"></i> ACCESSORIES</a>
+        <a href="#" class="cat-link"><i class="fas fa-wifi"></i> RFID & UHF READERS</a>
+        <a href="#" class="cat-link"><i class="fas fa-network-wired"></i> ROUTERS & SWITCHES</a>
+        <a href="#" class="cat-link"><i class="fas fa-bolt"></i> EV CHARGER</a>
+        <a href="#" class="cat-link"><i class="fas fa-tag"></i> RFID TAGS</a>
+        <a href="#" class="cat-link"><i class="fas fa-building"></i> BRANDS</a>
+    </div>
+</nav>
+
+<!-- BREADCRUMB -->
+<div class="container">
+    <div class="pd-breadcrumb">
+        <a href="#">Home</a> <i class="fas fa-chevron-right"></i>
+        <a href="#">Products</a> <i class="fas fa-chevron-right"></i>
+        <span>AI Based 4CH 4G LTE MDVR</span>
+    </div>
+</div>
+
+<!-- MAIN PRODUCT DETAIL -->
+<section class="container">
+    <div class="pd-grid">
+        <div class="pd-gallery">
+            <div class="carousel-wrapper" id="carouselWrapper">
+                <div class="carousel-badge">Sale</div>
+                <div class="carousel-track" id="carouselTrack">
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/mdvr-front-view/800/800.jpg" alt="AI Based 4CH 4G LTE MDVR - Front View">
+                        <div class="zoom-hint"><i class="fas fa-search-plus"></i> Hover to zoom</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/mdvr-ports-back/800/800.jpg" alt="AI Based 4CH 4G LTE MDVR - Back Ports">
+                        <div class="zoom-hint"><i class="fas fa-search-plus"></i> Hover to zoom</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/mdvr-cables/800/800.jpg" alt="AI Based 4CH 4G LTE MDVR - Cables">
+                        <div class="zoom-hint"><i class="fas fa-search-plus"></i> Hover to zoom</div>
+                    </div>
+                    <div class="carousel-slide">
+                        <img src="https://picsum.photos/seed/mdvr-install/800/800.jpg" alt="AI Based 4CH 4G LTE MDVR - Installation">
+                        <div class="zoom-hint"><i class="fas fa-search-plus"></i> Hover to zoom</div>
+                    </div>
+                </div>
+                <button class="carousel-arrow prev" onclick="carouselPrev()" aria-label="Previous image"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-arrow next" onclick="carouselNext()" aria-label="Next image"><i class="fas fa-chevron-right"></i></button>
+            </div>
+
+            <div class="carousel-dots" id="carouselDots">
+                <button class="carousel-dot active" onclick="goToSlide(0)" aria-label="Image 1"></button>
+                <button class="carousel-dot" onclick="goToSlide(1)" aria-label="Image 2"></button>
+                <button class="carousel-dot" onclick="goToSlide(2)" aria-label="Image 3"></button>
+                <button class="carousel-dot" onclick="goToSlide(3)" aria-label="Image 4"></button>
+            </div>
+
+            <div class="pd-thumbs">
+                <div class="pd-thumb active" onclick="goToSlide(0)">
+                    <img src="https://picsum.photos/seed/mdvr-front-view/200/200.jpg" alt="Front">
+                </div>
+                <div class="pd-thumb" onclick="goToSlide(1)">
+                    <img src="https://picsum.photos/seed/mdvr-ports-back/200/200.jpg" alt="Back">
+                </div>
+                <div class="pd-thumb" onclick="goToSlide(2)">
+                    <img src="https://picsum.photos/seed/mdvr-cables/200/200.jpg" alt="Cables">
+                </div>
+                <div class="pd-thumb" onclick="goToSlide(3)">
+                    <img src="https://picsum.photos/seed/mdvr-install/200/200.jpg" alt="Install">
+                </div>
+            </div>
+        </div>
+
+        <div class="pd-info">
+            <span class="pd-sale-badge">Sale</span>
+            <h1 class="pd-title">AI Based 4CH 4G LTE MDVR, built-in GPS, WiFi Hotspot, ADAS, DMS, RS232, Support upto 2TB Storage</h1>
+
+            <div class="social-proof-bar">
+                <div class="sp-trust">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    <span>"Amazing"</span>
+                </div>
+                <div class="sp-avatars">
+                    <img src="https://i.pravatar.cc/28?img=1" alt="">
+                    <img src="https://i.pravatar.cc/28?img=2" alt="">
+                    <img src="https://i.pravatar.cc/28?img=3" alt="">
+                </div>
+                <div class="sp-text">
+                    <strong>Michelle</strong> <i class="fas fa-check-circle sp-verified"></i> & 758 purchased
+                </div>
+                <div class="sp-love"><i class="fas fa-heart"></i> 1.1M</div>
+                <div class="sp-sold"><i class="fas fa-fire"></i> 7 sold/17hr</div>
+            </div>
+
+            <div class="pd-price-box">
+                <span class="pd-old-price">$599.00</span>
+                <span class="pd-new-price">$449.00</span>
+                <span class="pd-discount-tag">25% OFF</span>
+            </div>
+
+            <div class="pd-qty-cart">
+                <span class="pd-qty-label">Quantity:</span>
+                <div class="pd-qty">
+                    <button onclick="updateQty(-1)">−</button>
+                    <input type="number" value="1" min="1" id="qtyInput" onchange="updateSubtotal()">
+                    <button onclick="updateQty(1)">+</button>
+                </div>
+                <div class="pd-subtotal">Subtotal: <strong id="subtotalPrice">$449.00</strong></div>
+            </div>
+
+            <div class="pd-action-btns">
+                <button class="pd-add-cart" onclick="addToCart()"><i class="fas fa-shopping-cart"></i> Add to cart</button>
+                <button class="pd-buy-now" onclick="buyNow()"><i class="fas fa-bolt"></i> Buy it now</button>
+            </div>
+
+            <div class="pd-secondary-actions">
+                <button class="pd-wish-btn" id="wishBtn" onclick="toggleWishlist()"><i class="far fa-heart" id="wishIcon"></i> <span id="wishText">Wishlist</span></button>
+                <button class="pd-share-btn" onclick="toggleShare(event)">
+                    <i class="fas fa-share-alt"></i> Share
+                    <div class="share-popup" id="sharePopup">
+                        <h4>Copy link</h4>
+                        <div class="share-link-box">
+                            <input type="text" value="https://shop.tefco.ai/products/ai-based-4ch-4g-lte-mdvr" id="shareLink" readonly>
+                            <button onclick="copyLink(event)">Copy</button>
+                        </div>
+                    </div>
+                </button>
+            </div>
+
+            <div class="pd-live-viewers">
+                <div class="live-dot"></div>
+                <span><strong id="viewerCount">112</strong> people viewing right now</span>
+            </div>
+
+            <div class="pd-trust-badges">
+                <div class="pd-badge-item">
+                    <i class="fas fa-store"></i>
+                    <div><strong>Pickup available at RUH Warehouse</strong><small>Usually ready in 24 hours</small></div>
+                </div>
+                <div class="pd-badge-item">
+                    <i class="fas fa-truck"></i>
+                    <div><strong>Free Shipping</strong><small>Estimated delivery 2–8 days 🚚</small></div>
+                </div>
+                <div class="pd-badge-item">
+                    <i class="fas fa-undo"></i>
+                    <div><strong>Free Returns</strong><small>30-day return policy</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TABS -->
+<section class="container pd-tabs-sec">
+    <div class="pd-tabs-nav">
+        <button class="pd-tab-btn active" onclick="switchTab(event, 'desc')">Description</button>
+        <button class="pd-tab-btn" onclick="switchTab(event, 'shipping')">Shipping & Return</button>
+    </div>
+
+    <div class="pd-tab-content active" id="tab-desc">
+        <h3 style="margin-bottom:14px;font-size:16px;color:#0f172a;">1. Product Features</h3>
+        <ul class="features-list">
+            <li><strong>Real-time location monitoring:</strong> Periodically reports location information such as longitude, latitude, and speed based on the preset return interval.</li>
+            <li>Support 8 channels maximum of 1080P video real-time storage and upload.</li>
+            <li>Support 1pc SD card and 1pc 2.5 inch hard disk for storage.</li>
+            <li>Support remote intercom initiated by the monitoring platform.</li>
+            <li>Real-time video playback and historical video playback at the monitoring platform.</li>
+            <li>Support two RS232 serial port.</li>
+            <li><strong>Support ADAS and DMS AI safety driving assistance functions.</strong>
+                <ul style="margin-top:6px;list-style:none;padding-left:0">
+                    <li style="margin-bottom:4px"><strong>ADAS:</strong> Voice warning for lane departure, close proximity and collision, with platform evidence upload.</li>
+                    <li><strong>DMS:</strong> Warns drivers of fatigue, smoking, phone call, distraction via voice alert + platform upload.</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 style="margin:28px 0 14px;font-size:16px;color:#0f172a;">2. Product Parameters</h3>
+
+        <div class="spec-table-wrap">
+            <table class="spec-table">
+                <thead><tr><th width="30%">Technical Items</th><th>Technical Indicators</th></tr></thead>
+                <tbody>
+                    <tr class="spec-cat"><td colspan="2">System</td></tr>
+                    <tr><td>Operating System</td><td>Linux</td></tr>
+                    <tr><td>Microprocessor</td><td>4-core A7</td></tr>
+                    <tr><td>Cache</td><td>8GB</td></tr>
+                    <tr><td>Memory</td><td>1GB</td></tr>
+                    <tr class="spec-cat"><td colspan="2">Video & Audio</td></tr>
+                    <tr><td>Video</td><td>AHD720P/1080P — 8 channels 720P or 1080P</td></tr>
+                    <tr><td>Output</td><td>1 channel VGA</td></tr>
+                    <tr><td>Audio Input</td><td>7-channel audio (PCM), AV3-AV8, pickup</td></tr>
+                    <tr><td>Audio Output</td><td>2-way audio (PCM), speaker + AI reminder</td></tr>
+                    <tr><td>Screen Display</td><td>8-way screen display</td></tr>
+                    <tr><td>Compression</td><td>Audio g711A, video H.264</td></tr>
+                    <tr><td>Resolution</td><td>720P (1280×720) or 1080P (1920×1080)</td></tr>
+                    <tr><td>Real Time Video</td><td>8 way</td></tr>
+                    <tr><td>Time-lapse Video</td><td>ACC off → default 300s delay. Settable: 10–65535s</td></tr>
+                    <tr><td>Playback</td><td>Local 8-ch sync, remote single-ch</td></tr>
+                    <tr class="spec-cat"><td colspan="2">Network & Storage</td></tr>
+                    <tr><td>2G/3G/4G</td><td>LTE FDD: B1/3/5/8 · TDD: B34/38/39/40/41 · WCDMA: B1/5/8 · GSM: 900/1800</td></tr>
+                    <tr><td>Hard Disk</td><td>1 drive, up to 2 TB</td></tr>
+                    <tr><td>SD Card</td><td>Single, up to 256 GB</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="spec-table-wrap">
+            <table class="spec-table">
+                <thead><tr><th width="30%">Interface</th><th>Description</th></tr></thead>
+                <tbody>
+                    <tr><td>Front USB</td><td>AI (ADAS/DMS) calibration, settings</td></tr>
+                    <tr><td>SIM Card</td><td>Single (GNSS + video data)</td></tr>
+                    <tr><td>SD Card</td><td>Single, max 256 GB</td></tr>
+                    <tr><td>Hard Disk</td><td>2.5-inch, max 2 TB</td></tr>
+                    <tr><td>DMS</td><td>DMS camera port</td></tr>
+                    <tr><td>ADAS</td><td>ADAS camera port</td></tr>
+                    <tr><td>AV3-AV8</td><td>AHD camera inputs</td></tr>
+                    <tr><td>12V OUT</td><td>VGA display power</td></tr>
+                    <tr><td>VGA</td><td>Signal output</td></tr>
+                    <tr><td>MIC</td><td>Two-way talk + audio monitoring</td></tr>
+                    <tr><td>TTS</td><td>Voice broadcast</td></tr>
+                    <tr><td>RS485</td><td>Peripherals (load sensor, gimbal)</td></tr>
+                    <tr><td>RS232</td><td>Peripherals (oil, temp collector)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="spec-table-wrap">
+            <table class="spec-table">
+                <thead><tr><th width="30%">Specification</th><th>Details</th></tr></thead>
+                <tbody>
+                    <tr><td>Operating Voltage</td><td>DC 9–36V</td></tr>
+                    <tr><td>Working Current</td><td>600mA@12V, 300mA@24V</td></tr>
+                    <tr><td>Standby Power</td><td>60mA@12V, 33mA@24V</td></tr>
+                    <tr><td>Battery Backup</td><td>15S after power off</td></tr>
+                    <tr><td>Size</td><td>170 × 150 × 65 mm</td></tr>
+                    <tr><td>Weight</td><td>~1260g</td></tr>
+                    <tr><td>Operating Temp</td><td>-25°C to +80°C</td></tr>
+                    <tr><td>Storage Temp</td><td>-40°C to +85°C</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="pd-tab-content" id="tab-shipping">
+        <h3 style="margin-bottom:14px;font-size:16px;">Shipping Policy</h3>
+        <p style="color:#4b5563;line-height:1.8;margin-bottom:20px;font-size:13px">Enjoy Free Shipping On ALL Orders 🚚 Estimated delivery within 2 to 8 days. Tracking information provided for every order.</p>
+        <h3 style="margin-bottom:14px;font-size:16px;">Return Policy</h3>
+        <p style="color:#4b5563;line-height:1.8;margin-bottom:20px;font-size:13px">Free Returns within 30 days of delivery. Items must be in original condition with all tags attached.</p>
+        <h3 style="margin-bottom:14px;font-size:16px;">Order Cancellation</h3>
+        <p style="color:#4b5563;line-height:1.8;font-size:13px">Orders can be cancelled within 12 hours of placement.</p>
+    </div>
+</section>
+
+<!-- RELATED PRODUCTS -->
+<section class="container pd-related-sec">
+    <h2 class="pd-sec-title">Related Products</h2>
+    <div class="products-grid">
+        <div class="product-card">
+            <div class="pc-badge sale">Sale</div>
+            <div class="pc-img"><img src="https://picsum.photos/seed/bsj-eh03t-dashcam/400/400.jpg" alt="BSJ EH03T"></div>
+            <div class="pc-body">
+                <h4>BSJ AI Based EH03T 4CH Dash cam 4G LTE ADAS, DMS, WiFi, GPS</h4>
+                <div class="pc-price"><span class="pc-old">$399</span><span class="pc-new">$299</span></div>
+                <button class="pc-btn" onclick="showToast('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="pc-badge sale">Sale</div>
+            <div class="pc-img"><img src="https://picsum.photos/seed/jimi-jc400p-dashcam/400/400.jpg" alt="JIMI JC400P"></div>
+            <div class="pc-body">
+                <h4>JIMI JC400P 4G Dual Channel Dashcam 1080p Full HD</h4>
+                <div class="pc-price"><span class="pc-old">$349</span><span class="pc-new">$279</span></div>
+                <button class="pc-btn" onclick="showToast('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="pc-badge sale">Sale</div>
+            <div class="pc-img"><img src="https://picsum.photos/seed/azdome-m300s-4k/400/400.jpg" alt="AZDOME M300S"></div>
+            <div class="pc-body">
+                <h4>AZDOME M300S Car Recorders 4K+1080P Rear Camera GPS WiFi</h4>
+                <div class="pc-price"><span class="pc-old">$259</span><span class="pc-new">$199</span></div>
+                <button class="pc-btn" onclick="showToast('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="pc-badge sale">Sale</div>
+            <div class="pc-img"><img src="https://picsum.photos/seed/azdome-m560-4k/400/400.jpg" alt="AZDOME M560"></div>
+            <div class="pc-body">
+                <h4>AZDOME M560 3CH 4K Dash Cam, 4" IPS Touch eMMC 128GB</h4>
+                <div class="pc-price"><span class="pc-old">$379</span><span class="pc-new">$309</span></div>
+                <button class="pc-btn" onclick="showToast('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- RECENTLY VIEWED -->
+<section class="container pd-recent-sec">
+    <h2 class="pd-sec-title">Recently Viewed Products</h2>
+    <div class="products-grid">
+        <div class="product-card">
+            <div class="pc-badge sale">Sale</div>
+            <div class="pc-img"><img src="https://picsum.photos/seed/mdvr-front-view/400/400.jpg" alt="MDVR"></div>
+            <div class="pc-body">
+                <h4>AI Based 4CH 4G LTE MDVR, built-in GPS, WiFi, ADAS</h4>
+                <div class="pc-price"><span class="pc-old">$599</span><span class="pc-new">$449</span></div>
+                <button class="pc-btn" onclick="showToast('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="pc-badge sale">Sale</div>
+            <div class="pc-img"><img src="https://picsum.photos/seed/bsj-eh03t-dashcam/400/400.jpg" alt="BSJ EH03T"></div>
+            <div class="pc-body">
+                <h4>BSJ AI Based EH03T 4CH Dash cam 4G LTE ADAS, DMS</h4>
+                <div class="pc-price"><span class="pc-old">$399</span><span class="pc-new">$299</span></div>
+                <button class="pc-btn" onclick="showToast('Added to cart!')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="shop-footer">
+    <div class="newsletter-sec">
+        <div class="container">
+            <div class="newsletter-inner">
+                <h2>Stay in the Loop</h2>
+                <p>Join the Club – Be First to Know About New Drops & Big Discounts!</p>
+                <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+                    <input type="email" placeholder="Enter your email address" required id="nlEmail">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <a href="index.html" class="shop-logo"><div class="logo-mark">IG</div><div class="logo-name">INAVON <span>GLOBAL</span></div></a>
+                <p>Your trusted partner for advanced dashcams, MDVR systems, GPS trackers, and fleet intelligence solutions.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h4>Shop</h4>
+                <a href="#">Dashcam & MDVR</a>
+                <a href="#">Sensors</a>
+                <a href="#">GPS Tracker</a>
+                <a href="#">Accessories</a>
+                <a href="#">RFID & UHF Readers</a>
+            </div>
+            <div class="footer-col">
+                <h4>Customer Service</h4>
+                <a href="#">About us</a>
+                <a href="#">Contact us</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Refund policy</a>
+                <a href="#">Catalog</a>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="#">Riyadh, Saudi Arabia</a>
+                <a href="#">+966 50 000 0000</a>
+                <a href="#">info@inavonglobal.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 INAVON GLOBAL. All rights reserved.</p>
+            <div class="footer-payments">
+                <i class="fab fa-cc-visa"></i>
+                <i class="fab fa-cc-mastercard"></i>
+                <i class="fab fa-cc-amex"></i>
+                <i class="fab fa-cc-paypal"></i>
+                <i class="fab fa-cc-apple-pay"></i>
+                <i class="fab fa-google-pay"></i>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- ══════════════════════════════════════
+     MOBILE BOTTOM NAVIGATION BAR
+══════════════════════════════════════ -->
+<nav class="mob-bottom-nav" aria-label="Mobile Navigation">
+    <div class="container">
+        <div class="mob-bottom-nav-inner">
+            <a href="index.html" class="mob-bnav-item">
+                <i class="fas fa-home"></i>
+                <span>Home</span>
+            </a>
+            <a href="#" class="mob-bnav-item" onclick="openSearchOverlay(); return false;">
+                <i class="fas fa-search"></i>
+                <span>Search</span>
+            </a>
+            <a href="#" class="mob-bnav-item">
+                <i class="fas fa-th-large"></i>
+                <span>Categories</span>
+            </a>
+            <a href="#" class="mob-bnav-item">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="mob-bnav-cart-badge" id="mobCartBadge">0</span>
+                <span>Cart</span>
+            </a>
+            <a href="#" class="mob-bnav-item">
+                <i class="far fa-user"></i>
+                <span>Account</span>
+            </a>
+        </div>
+    </div>
+</nav>
+
+<script>
+    // ── STATE ──
+    let cartItems = 0;
+
+    // ══════════════════════════════════════
+    //   IMAGE CAROUSEL
+    // ══════════════════════════════════════
+    let currentSlide = 0;
+    const totalSlides = 4;
+    let autoplayTimer = null;
+
+    function goToSlide(index) {
+        if (index < 0) index = totalSlides - 1;
+        if (index >= totalSlides) index = 0;
+        currentSlide = index;
+
+        const track = document.getElementById('carouselTrack');
+        track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+
+        document.querySelectorAll('.carousel-dot').forEach((dot, i) => {
+            dot.classList.toggle('active', i === currentSlide);
+        });
+
+        document.querySelectorAll('.pd-thumb').forEach((thumb, i) => {
+            thumb.classList.toggle('active', i === currentSlide);
+        });
+
+        const activeThumb = document.querySelectorAll('.pd-thumb')[currentSlide];
+        if (activeThumb) {
+            activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
+        resetAutoplay();
+    }
+
+    function carouselNext() {
+        goToSlide(currentSlide + 1);
+    }
+
+    function carouselPrev() {
+        goToSlide(currentSlide - 1);
+    }
+
+    function resetAutoplay() {
+        clearInterval(autoplayTimer);
+        autoplayTimer = setInterval(() => {
+            goToSlide(currentSlide + 1);
+        }, 5000);
+    }
+
+    resetAutoplay();
+
+    // ── Touch/Swipe Support ──
+    (function() {
+        const wrapper = document.getElementById('carouselWrapper');
+        let startX = 0;
+        let startY = 0;
+        let isDragging = false;
+        let isHorizontalSwipe = null;
+
+        wrapper.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            isDragging = true;
+            isHorizontalSwipe = null;
+        }, { passive: true });
+
+        wrapper.addEventListener('touchmove', function(e) {
+            if (!isDragging) return;
+            const diffX = e.touches[0].clientX - startX;
+            const diffY = e.touches[0].clientY - startY;
+
+            if (isHorizontalSwipe === null && (Math.abs(diffX) > 8 || Math.abs(diffY) > 8)) {
+                isHorizontalSwipe = Math.abs(diffX) > Math.abs(diffY);
+            }
+        }, { passive: true });
+
+        wrapper.addEventListener('touchend', function(e) {
+            if (!isDragging) return;
+            isDragging = false;
+
+            if (isHorizontalSwipe === false) return;
+
+            const endX = e.changedTouches[0].clientX;
+            const diff = endX - startX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff < 0) {
+                    carouselNext();
+                } else {
+                    carouselPrev();
+                }
+            }
+        }, { passive: true });
+
+        wrapper.addEventListener('mouseenter', () => clearInterval(autoplayTimer));
+        wrapper.addEventListener('mouseleave', () => resetAutoplay());
+
+        wrapper.setAttribute('tabindex', '0');
+        wrapper.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft') carouselPrev();
+            if (e.key === 'ArrowRight') carouselNext();
+        });
+    })();
+
+    // ══════════════════════════════════════
+    //   HAMBURGER DRAWER
+    // ══════════════════════════════════════
+    function toggleDrawer() {
+        const drawer = document.getElementById('mobileDrawer');
+        const overlay = document.getElementById('mobileOverlay');
+        const btn = document.getElementById('hamburgerBtn');
+        const isOpen = drawer.classList.contains('active');
+
+        if (isOpen) {
+            closeDrawer();
+        } else {
+            drawer.classList.add('active');
+            overlay.classList.add('active');
+            btn.classList.add('active');
+            document.body.classList.add('menu-open');
+        }
+    }
+
+    function closeDrawer() {
+        document.getElementById('mobileDrawer').classList.remove('active');
+        document.getElementById('mobileOverlay').classList.remove('active');
+        document.getElementById('hamburgerBtn').classList.remove('active');
+        document.body.classList.remove('menu-open');
+    }
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeDrawer();
+            closeSearchOverlay();
+        }
+    });
+
+    // Close drawer on swipe left
+    (function() {
+        const drawer = document.getElementById('mobileDrawer');
+        let startX = 0, currentX = 0, isDragging = false;
+
+        drawer.addEventListener('touchstart', function(e) {
+            startX = e.touches[0].clientX;
+            currentX = startX;
+            isDragging = true;
+        }, { passive: true });
+
+        drawer.addEventListener('touchmove', function(e) {
+            if (!isDragging) return;
+            currentX = e.touches[0].clientX;
+            const diff = currentX - startX;
+            if (diff < 0) {
+                drawer.style.transform = 'translateX(' + diff + 'px)';
+                drawer.style.transition = 'none';
+            }
+        }, { passive: true });
+
+        drawer.addEventListener('touchend', function() {
+            if (!isDragging) return;
+            isDragging = false;
+            const diff = currentX - startX;
+            drawer.style.transition = '';
+            if (diff < -80) {
+                closeDrawer();
+            }
+            drawer.style.transform = '';
+        });
+    })();
+
+    // ══════════════════════════════════════
+    //   SEARCH OVERLAY
+    // ══════════════════════════════════════
+    function openSearchOverlay() {
+        document.getElementById('searchOverlay').classList.add('active');
+        setTimeout(() => document.getElementById('overlaySearchInput').focus(), 300);
+    }
+
+    function closeSearchOverlay() {
+        document.getElementById('searchOverlay').classList.remove('active');
+    }
+
+    document.getElementById('searchOverlay').addEventListener('click', function(e) {
+        if (e.target === this) closeSearchOverlay();
+    });
+
+    // ══════════════════════════════════════
+    //   QUANTITY
+    // ══════════════════════════════════════
+    const unitPrice = 449.00;
+    function updateQty(change) {
+        const input = document.getElementById('qtyInput');
+        let val = parseInt(input.value) + change;
+        if (val < 1) val = 1;
+        if (val > 99) val = 99;
+        input.value = val;
+        updateSubtotal();
+    }
+    function updateSubtotal() {
+        const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+        document.getElementById('subtotalPrice').innerText = '$' + (qty * unitPrice).toFixed(2);
+    }
+
+    // ══════════════════════════════════════
+    //   CART
+    // ══════════════════════════════════════
+    function addToCart() {
+        const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+        cartItems += qty;
+        document.getElementById('cartCount').innerText = cartItems;
+        document.getElementById('mobCartBadge').innerText = cartItems;
+
+        // Animate header badge
+        const badge = document.getElementById('cartCount');
+        badge.style.transform = 'scale(1.4)';
+        setTimeout(() => { badge.style.transform = 'scale(1)'; }, 300);
+
+        // Animate mobile badge
+        const mobBadge = document.getElementById('mobCartBadge');
+        mobBadge.style.transform = 'scale(1.4)';
+        setTimeout(() => { mobBadge.style.transform = 'scale(1)'; }, 300);
+
+        showToast('Added to cart!');
+    }
+    function buyNow() {
+        const qty = parseInt(document.getElementById('qtyInput').value) || 1;
+        cartItems += qty;
+        document.getElementById('cartCount').innerText = cartItems;
+        document.getElementById('mobCartBadge').innerText = cartItems;
+        showToast('Order placed successfully!');
+    }
+
+    // ══════════════════════════════════════
+    //   WISHLIST
+    // ══════════════════════════════════════
+    let wishlisted = false;
+    function toggleWishlist() {
+        wishlisted = !wishlisted;
+        const btn = document.getElementById('wishBtn');
+        const icon = document.getElementById('wishIcon');
+        const text = document.getElementById('wishText');
+        if (wishlisted) {
+            btn.classList.add('wishlisted');
+            icon.className = 'fas fa-heart';
+            text.innerText = 'Wishlisted';
+            showToast('Added to wishlist ❤️');
+        } else {
+            btn.classList.remove('wishlisted');
+            icon.className = 'far fa-heart';
+            text.innerText = 'Wishlist';
+        }
+    }
+
+    // ══════════════════════════════════════
+    //   SHARE
+    // ══════════════════════════════════════
+    function toggleShare(e) {
+        e.stopPropagation();
+        document.getElementById('sharePopup').classList.toggle('show');
+    }
+    function copyLink(e) {
+        e.stopPropagation();
+        const el = document.getElementById('shareLink');
+        el.select();
+        navigator.clipboard.writeText(el.value).then(() => {
+            showToast('Link copied! 🔗');
+        }).catch(() => { document.execCommand('copy'); showToast('Link copied! 🔗'); });
+        document.getElementById('sharePopup').classList.remove('show');
+    }
+    document.addEventListener('click', function(e) {
+        if (!e.target.closest('.pd-share-btn')) {
+            document.getElementById('sharePopup').classList.remove('show');
+        }
+    });
+
+    // ══════════════════════════════════════
+    //   TABS
+    // ══════════════════════════════════════
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.pd-tab-content').forEach(c => c.classList.remove('active'));
+        document.querySelectorAll('.pd-tab-btn').forEach(b => b.classList.remove('active'));
+        document.getElementById('tab-' + tabId).classList.add('active');
+        e.target.classList.add('active');
+    }
+
+    // ══════════════════════════════════════
+    //   NEWSLETTER
+    // ══════════════════════════════════════
+    function handleNewsletter(e) {
+        e.preventDefault();
+        const email = document.getElementById('nlEmail').value;
+        if (email) {
+            showToast('Subscribed successfully! 🎉');
+            document.getElementById('nlEmail').value = '';
+        }
+    }
+
+    // ══════════════════════════════════════
+    //   TOAST
+    // ══════════════════════════════════════
+    let toastTimer;
+    function showToast(msg) {
+        clearTimeout(toastTimer);
+        const toast = document.getElementById('toast');
+        document.getElementById('toastMsg').innerText = msg;
+        toast.classList.add('show');
+        toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // ══════════════════════════════════════
+    //   LIVE VIEWERS
+    // ══════════════════════════════════════
+    setInterval(() => {
+        const base = 112;
+        const count = Math.max(85, base + Math.floor(Math.random() * 20) - 10);
+        document.getElementById('viewerCount').innerText = count;
+    }, 8000);
+
+    // ══════════════════════════════════════
+    //   CATEGORY NAV
+    // ══════════════════════════════════════
+    document.querySelectorAll('.cat-link').forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelectorAll('.cat-link').forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+
+    // ══════════════════════════════════════
+    //   MOBILE BOTTOM NAV ACTIVE STATE
+    // ══════════════════════════════════════
+    document.querySelectorAll('.mob-bnav-item').forEach(item => {
+        item.addEventListener('click', function(e) {
+            if (this.querySelector('.fa-search')) return;
+            document.querySelectorAll('.mob-bnav-item').forEach(i => i.classList.remove('active'));
+            this.classList.add('active');
+        });
+    });
+</script>
+
+</body>
+</html>
